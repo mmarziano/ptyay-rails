@@ -2,7 +2,7 @@ body p {
     font-family: 'News Cycle', 'Helvetica', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {font-family: 'Julius Sans One', 'Helvetica', sans-serif;}
+h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-serif;}
 
 .blue-overlay {
     background-color:#01166f;
@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Julius Sans One', 'Helvetica', sans-serif;
     height: auto;
 }
 
-.side-panel {
+.full-panel {
     position: fixed;
     background-color: #01166f;
     background-image: url(/assets/school-supplies.jpg); 
@@ -23,18 +23,20 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Julius Sans One', 'Helvetica', sans-serif;
     height: 100vh;
 }
 
-.side-panel p {
+.full-panel p {
     color: #fff;
     margin: auto;
 }
 
-.side-panel img {
+.full-panel img {
     margin: auto;
+    padding-top: 50px;
     padding-bottom: 100px;
 }
 
-.side-panel .card {
-    width: 80%;
+
+.signup {
+    width: 70%;
     padding: 50px 10px 50px 10px;
     margin: auto;
     background: rgba(255,255,255,0.2);
@@ -45,8 +47,21 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Julius Sans One', 'Helvetica', sans-serif;
 
 .logo {
     display: block;
-    width: 200px;
+    width: 500px;
     height: auto;
+}
+
+/* TAGLINE */
+
+#tagline {
+    margin: auto;
+    text-align: center;
+}
+
+#tagline h1 {
+    font-family: 'Covered By Your Grace', 'Helvetica', sans-serif;
+    font-size: 5em;
+    color: #fff;
 }
 
 /* STICKY BOTTOM */
