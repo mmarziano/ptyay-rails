@@ -1,0 +1,11 @@
+body {
+    background-color:#fff;
+}
+
+.side-panel {
+    background-color: #ccc;
+    background-image: url(/assets/sidepanel.jpg); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px;
+}
