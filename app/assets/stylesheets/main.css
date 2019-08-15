@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-
 }
 
 .full-panel {
-    position: fixed;
+    position: relative;
     background-color: #01166f;
     background-image: url(/assets/school-supplies.jpg); 
     background-position: center;
@@ -34,24 +34,24 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-
 .full-panel img {
     margin: auto;
     padding-top: 50px;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
 }
 
 
-.signup {
+.login {
     width: 70%;
     padding: 50px 10px 50px 10px;
     margin: auto;
-    background:  rgba(0, 0, 0, 0.10);
+    background:  rgba(0, 0, 0, 0.30);
     box-shadow: 0 1px 6px rgba(255, 255, 255, 0.12), 0 1px 4px rgba(255, 255, 255, 0.24);
     border: none;
 }
 
-.signup h1 {
+.login h1 {
     text-align: center;
     color: #fff;
-    font-family: 'Staatliches', sans-serif;
-    font-size: 1.5em;
+    font-family: 'Covered By Your Grace', sans-serif;
+    font-size: 3em;
 }
 
 
@@ -72,6 +72,7 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-
 }
 
 #tagline h1 {
+    margin: 0;
     font-family: 'Covered By Your Grace', 'Helvetica', sans-serif;
     font-size: 4em;
     color: #fff;
@@ -79,9 +80,9 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-
 
 #tagline span {
     font-family: 'News Cycle', 'Helvetica', sans-serif;
-    font-size: 20px;
+    font-size: 24px;
     color: #fff;
-    padding-bottom: 10px;
+    padding-bottom: 30px;
 }
 
 /* STICKY BOTTOM */

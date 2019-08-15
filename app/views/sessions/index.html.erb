@@ -9,10 +9,10 @@
                 <span>The online fundraising resource for school communities.</span>
             </div>
             <div class="col-md-7 col-sm-7">
-                <div class="signup">
+                <div class="login">
                     <div class="card-body"> 
-                        <h1>Signin to your Account</h1>    
-                            <%= form_tag ('/sessions') do%>
+                        <h1>Login to your Account</h1>    
+                            <%= form_tag ('/login') do%>
                         
                                 <%= label_tag :email %>
                                 <%= email_field_tag :email, nil ,class: "form-control" %></br>
@@ -20,7 +20,8 @@
                                 <%= label_tag :password %>
                                 <%= password_field_tag :password, nil ,class: "form-control" %></br>
                         
-                                <%= submit_tag "Sign In", class: "btn btn-primary" %>
+                                <%= submit_tag "Log In", class: "btn btn-primary btn-lg btn-block" %></br>
+                                <%= image_submit_tag("http://g-ecx.images-amazon.com/images/G/01/lwa/btnLWA_gold_156x32.png") %>
                             <% end %>
                     </div>
                 </div>

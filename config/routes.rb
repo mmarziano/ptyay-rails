@@ -3,7 +3,10 @@ Rails.application.routes.draw do
 
   root :to => 'application#index'
   
-  post '/sessions' => "sessions#create"
-
+  get '/login' => "sessions#new"
+  post '/login' => "sessions#create"
+  get '/signup' => "users#new"
+  post '/signup' => "users#create"
+  
   resources :users
 end
