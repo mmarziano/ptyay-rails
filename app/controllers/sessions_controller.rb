@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
     end 
 
     def create
+        raise params.inspect
         @user = User.find(params[:email])
         if @user && @user.authenticate(params[:password])
             log_in(@user)

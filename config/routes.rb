@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root :to => 'application#index'
   
-  post '/' => "sessions#create"
+  post '/sessions' => "sessions#create"
 
   resources :users
 end
