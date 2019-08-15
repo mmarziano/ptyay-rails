@@ -10,15 +10,64 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_13_232834) do
+ActiveRecord::Schema.define(version: 2019_08_15_011530) do
 
-  create_table "parents", force: :cascade do |t|
+  create_table "classrooms", force: :cascade do |t|
+    t.string "teacher"
+    t.integer "school_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "fundraisers", force: :cascade do |t|
+    t.integer "school_id"
+    t.string "title"
+    t.decimal "amt_raised", precision: 16, scale: 2
+    t.string "status"
+    t.integer "goal"
+    t.date "date"
+    t.string "school_year"
+    t.string "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "households", force: :cascade do |t|
+    t.integer "school_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "schools", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "city"
+    t.string "state"
+    t.string "zipcode"
+    t.string "logo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "grade"
+    t.integer "school_id"
+    t.integer "household_id"
+    t.integer "classroom_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email"
     t.string "password_digest"
     t.string "first_name"
     t.string "last_name"
     t.string "profile_img"
+    t.boolean "admin", default: false
     t.integer "school_id"
     t.integer "household_id"
     t.datetime "created_at", null: false
