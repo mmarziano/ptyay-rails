@@ -7,7 +7,8 @@ class CreateSchools < ActiveRecord::Migration[5.2]
       t.string :state
       t.string :zipcode
       t.string :logo 
-      
+      t.string :school_year
+
       t.timestamps
     end
   end

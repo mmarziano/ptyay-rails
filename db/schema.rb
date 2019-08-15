@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2019_08_15_011530) do
     t.string "state"
     t.string "zipcode"
     t.string "logo"
+    t.string "school_year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
