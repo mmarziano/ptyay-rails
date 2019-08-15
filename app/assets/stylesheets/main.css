@@ -1,3 +1,5 @@
+
+
 body p {
     font-family: 'News Cycle', 'Helvetica', sans-serif;
 }
@@ -42,6 +44,13 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-
     box-shadow: 0 1px 6px rgba(255, 255, 255, 0.12), 0 1px 4px rgba(255, 255, 255, 0.24);
     border: none;
 }
+
+.signup h1 {
+    text-align: center;
+    color: #fff;
+}
+
+
 
 /* LOGO STYLING */
 
