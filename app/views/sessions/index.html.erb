@@ -1,0 +1,31 @@
+<div class="jumbotron-fluid">
+    <div class="container-fluid full-panel">
+        <div class="row clearfix">
+                <img class="logo img-fluid" src="assets/ptyay.png" alt="logo">
+        </div>
+        <div class="row clearfix">
+            <div id="tagline" class="col-md-5 col-sm-5">
+                <h1>Fundraising made happy &#9786</h1>
+                <span>The online fundraising resource for school communities.</span>
+            </div>
+            <div class="col-md-7 col-sm-7">
+                <div class="signup">
+                    <div class="card-body"> 
+                        <h1>Signin to your Account</h1>    
+                            <%= form_tag({controller: "sessions", action: "create"}, method: "post") do%>
+                        
+                                <%= label_tag :email %>
+                                <%= email_field_tag :email, nil ,class: "form-control" %></br>
+                        
+                                <%= label_tag :password %>
+                                <%= password_field_tag :password, nil ,class: "form-control" %></br>
+                        
+                                <%= submit_tag "Sign In", class: "btn btn-primary" %>
+                            <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            

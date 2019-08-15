@@ -1,4 +1,6 @@
-
+* {
+    overflow-y: scroll;
+}
 
 body p {
     font-family: 'News Cycle', 'Helvetica', sans-serif;
@@ -48,6 +50,8 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-
 .signup h1 {
     text-align: center;
     color: #fff;
+    font-family: 'Staatliches', sans-serif;
+    font-size: 1.5em;
 }
 
 
