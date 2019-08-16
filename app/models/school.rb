@@ -13,4 +13,6 @@ class School < ApplicationRecord
     def self.sort
         School.all.sort 
     end 
+
+    
 end
