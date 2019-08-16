@@ -1,4 +1,17 @@
-<div class='login'>
-    <h1><%=@user.full_name %></h1></br>
 
+    <div class="profile profile-card text-center">
+        <img class="img-thumbnail rounded-circle rounded-sm" src=<%=@user.profile_img%> alt='Profile Image'>
+    </div>
+
+<div class="profile-card">
+    <h1><%=@user.full_name %></h1></h1>
 </div>
+
+<div class="profile-card">
+    <p><%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-outline-light" %></p>
+</div>
+
+<div class="profile-card">
+    <p><%= link_to "View Events/Fundraisers", fundraisers_path, class: "btn btn-outline-light" %></p>
+</div>
+

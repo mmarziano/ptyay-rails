@@ -103,10 +103,33 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-
     width: 60%;
     padding: 50px 50px 50px 50px;
     margin: auto;
-
-
 }
 
+/* PROFILE STYLING */
+.profile img {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.profile h1 {
+    color: #fff;
+}
+
+.profile-card {
+    width: 80%;
+    padding: 10px 10px 10px 10px;
+    margin: auto;
+    background:  rgba(0, 0, 0, 0.30);
+    box-shadow: 0 1px 6px rgba(255, 255, 255, 0.12), 0 1px 4px rgba(255, 255, 255, 0.24);
+    border: none;
+    margin-bottom: 15px;
+}
+.profile-card h1 {
+    color: #fff;
+    font-size: 2em;
+}
 /* STICKY BOTTOM */
 
 .fixed-bottom {

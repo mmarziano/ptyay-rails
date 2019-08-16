@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     layout "main"
-    before_action :require_login, only: :show
+    before_action :require_login, only: [:show, :edit, :update, :destroy]
     
     def index
     end 

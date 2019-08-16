@@ -5,15 +5,17 @@ class SessionsController < ApplicationController
     end
 
     def new
+        @user=User.new
     end 
 
     def create
+        @user = User.find_by(email: params[:email])
+        
         if @user && @user.authenticate(params[:password])
             log_in(@user)
-            redirect_to @user
+            redirect_to user_path(@user)
         else 
-        flash.now[:message] = "Unable to login."
-        redirect_to signup_path
+            redirect_to signup_path
         end
     end 
 

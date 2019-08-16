@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2019_08_15_011530) do
     t.string "password_digest"
     t.string "first_name"
     t.string "last_name"
-    t.string "profile_img"
+    t.string "profile_img", default: "/assets/avatar.jpg"
     t.boolean "admin", default: false
     t.integer "school_id"
     t.integer "household_id"
