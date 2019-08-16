@@ -37,6 +37,19 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-
     padding-bottom: 50px;
 }
 
+.full-panel .form-card {
+    background-color:transparent;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+    width: 80%;
+    padding: 50px 50px 50px 50px;
+    margin: auto;
+}
+
+.full-panel .form-card h1, h2, h3, h4, h5, h6, p {
+    color: #fff;
+}
+
 .side-panel {
     position: relative;
     background-color: #01166f;
@@ -100,7 +113,7 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-
     background-color: #fff;
     border: 1px solid #ccc;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
-    width: 60%;
+    width: 80%;
     padding: 50px 50px 50px 50px;
     margin: auto;
 }

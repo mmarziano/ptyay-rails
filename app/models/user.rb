@@ -11,7 +11,10 @@ class User < ApplicationRecord
     belongs_to :school, optional: true
     belongs_to :household, optional: true
     has_many :fundraisers
+    has_many :students, through: :household
 
+    accepts_nested_attributes_for :school
+    accepts_nested_attributes_for :students
 
     def full_name 
         self.first_name.capitalize + " " + self.last_name.capitalize

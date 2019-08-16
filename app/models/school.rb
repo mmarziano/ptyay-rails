@@ -10,8 +10,7 @@ class School < ApplicationRecord
         self.all.count
     end 
 
-    def self.sort_by_zip(zipcode)
-        zipcode = zipcode.to_s
-        School.all.select {|school| school.zipcode.include?(zipcode)}
+    def self.sort
+        School.all.sort 
     end 
 end

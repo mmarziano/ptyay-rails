@@ -7,25 +7,41 @@ class UsersController < ApplicationController
 
     def new
         @user = User.new
+        @user.build_school
+        3.times {@user.build_household.students.build}
     end 
 
     def create 
-        if User.find_by(email: params[:email])
-            redirect_to '/'
+        raise params.inspect
+        if @user = User.find_by(email: params[:email]) && @user.school_id == nil
+            render :new
         else 
             @user = User.create(user_params)
             @schools = School.sort_by_zip(params[:zipcode])
-            if @user.save 
-                log_in(@user)
-                render partial: '/users/select_school'
-            else 
-                @user.errors.full_messages.inspect
-                render :new
-            end 
-        end 
+                if @user.save 
+                    log_in(@user)
+                    render partial: '/users/complete_profile'
+                else 
+                    raise @user.errors.full_messages.inspect
+                    render :new
+                end  
+            end
     end 
 
     def show 
+        @user = User.find(params[:id])
+    end 
+
+    def update 
+        raise params.inspect
+        @user = User.find(current_user.id)
+        @user.school_id = params[:school_id]
+        @user.save
+        byebug
+        redirect_to user_path(@user)
+    end 
+
+    def edit 
         @user = User.find(params[:id])
     end 
 
@@ -40,4 +56,6 @@ private
           redirect_to '/'
         end
     end
+
+
 end

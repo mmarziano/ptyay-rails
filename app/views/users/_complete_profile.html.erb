@@ -1,0 +1,9 @@
+<h1 class="text-center">Select your school...</h1>
+
+    <div class="form-card">
+        <%= form_tag ('/profile') do%>
+            <%= select_tag "school_id", options_from_collection_for_select(@schools, "id", "name"), class: "form-control", include_blank: "Please select one..." %></br>
+            <%= submit_tag "Link to School", class: "btn btn-outline-primary" %>  
+            
+        <% end %>
+    </div>
