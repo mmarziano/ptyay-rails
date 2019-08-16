@@ -14,8 +14,8 @@
     <%= f.label :last_name %>
     <%= f.text_field :last_name, class: "form-control", :required => true %></br>
 
-    <%= f.label :school %>
-    <%= f.collection_select :school_id, School.all, :id, :name, class: "form-control", :required => true %></br>
+    <%= label_tag "School Zipcode" %>
+    <%= text_field_tag :zipcode, nil, class: "form-control", :required => true %></br>
 
     <%= f.submit "Create Account" %>
 

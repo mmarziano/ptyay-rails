@@ -10,13 +10,18 @@ class UsersController < ApplicationController
     end 
 
     def create 
-        @user = User.create(user_params)
-        if @user.save 
-            log_in(@user)
-            redirect_to @user
+        if User.find_by(email: params[:email])
+            redirect_to '/'
         else 
-            @user.errors.full_messages.inspect
-            render :new
+            @user = User.create(user_params)
+            @schools = School.sort_by_zip(params[:zipcode])
+            if @user.save 
+                log_in(@user)
+                render partial: '/users/select_school'
+            else 
+                @user.errors.full_messages.inspect
+                render :new
+            end 
         end 
     end 
 
