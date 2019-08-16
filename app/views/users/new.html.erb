@@ -1,28 +1,6 @@
-<div class="jumbotron-fluid">
-    <div class="container-fluid full-panel">
-        <div class="row clearfix">
-            <h1>Create Your Free Account!</h1>
 
-            <%= form_for @user do |f| %>
-                <%= f.label :username %>
-                <%= f.text_field :username, class: "form-control" %></br>
+ <h1 style="text-align: center">Create Your Free Account!</h1>
 
-                <%= f.label :email %>
-                <%= f.email_field :email, class: "form-control" %></br>
-
-                <%= f.label :password %>
-                <%= f.password_field :password, class: "form-control" %></br>
-
-                <%= f.label :first_name %>
-                <%= f.text_field :first_name, class: "form-control" %></br>
-
-                <%= f.label :last_name %>
-                <%= f.text_field :last_name, class: "form-control" %></br>
-
-                <%= f.submit %>
-
-
-            <% end %>
-        </div>
-    </div>
-</div>
+            <div class="form-card">
+                <%= render partial: "form" %>
+            </div>

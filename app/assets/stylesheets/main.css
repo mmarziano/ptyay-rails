@@ -37,6 +37,15 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-
     padding-bottom: 50px;
 }
 
+.side-panel {
+    position: relative;
+    background-color: #01166f;
+    background-image: url(/assets/school-supplies.jpg); 
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
 
 .login {
     width: 70%;
@@ -60,7 +69,7 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-
 
 .logo {
     display: block;
-    width: 500px;
+    width: 400px;
     height: auto;
 }
 
@@ -85,6 +94,19 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-
     padding-bottom: 30px;
 }
 
+/* CARD STYLING */
+
+.form-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+    width: 60%;
+    padding: 50px 50px 50px 50px;
+    margin: auto;
+
+
+}
+
 /* STICKY BOTTOM */
 
 .fixed-bottom {
@@ -94,7 +116,7 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-
 }
 
 .fixed-bottom p {
-    color: #fff;
+    color: rgb(199, 239, 255);
     float: right;
     margin-top: 10px;
 }
@@ -110,6 +132,7 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-
 ::-webkit-input-placeholder {
     font-family: ' News Cycle', 'Helvetica', sans-serif;
     font-size: 16px;
+    color: rgb(69, 172, 212);
   }
   
   :-ms-input-placeholder {
@@ -124,18 +147,18 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-
   ::-webkit-label {
     font-family: 'News Cycle', 'Helvetica', sans-serif;
     font-size: 16px;
-    color: #fff;
+    color: rgb(69, 172, 212);
   }
   
   :-ms-label {
     font-family: 'News Cycle', 'Helvetica', sans-serif;
     font-size: 16px; 
-    color: #fff;
+    color: rgb(69, 172, 212);
   }
   
   label {
     font-family: 'News Cycle', 'Helvetica', sans-serif;
-    color: #fff;
+    color: rgb(69, 172, 212);
   }
 
   ::-webkit-submit {
