@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
     layout "main"
+    before_action :require_login, only: :show
     
     def index
     end 
@@ -19,10 +20,19 @@ class UsersController < ApplicationController
         end 
     end 
 
+    def show 
+        @user = User.find(params[:id])
+    end 
 
 private 
 
     def user_params
         params.require(:user).permit(:username, :email, :password, :first_name, :last_name, :school_id, :household_id, :profile_img)
     end 
+
+    def require_login
+        unless logged_in?
+          redirect_to '/'
+        end
+    end
 end
