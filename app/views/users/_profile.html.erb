@@ -4,7 +4,11 @@
     </div>
 
 <div class="profile-card">
-    <h1><%=@user.full_name %></h1></h1>
+    <h1><%=@user.full_name %></h1>
+    <p><%=@user.school%></p>
+    <address>
+        <%=@user.school.address%>
+    </addreess>
 </div>
 
 <div class="profile-card">
