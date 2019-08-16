@@ -25,11 +25,9 @@
                             <% end %>
                 </div>
                 <div class="col-md-9 col-sm-9">
-                    <% if current_user && current_user.username == nil %>
-                      <%= render :partial => "complete_profile", locals: {user: @user} %>
-                    <% else %>
+                    
                       <%= yield %>
-                    <% end %>
+              
                 </div>
             </div>
         </div>

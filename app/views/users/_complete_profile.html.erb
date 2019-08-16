@@ -1,9 +1,47 @@
-<h1 class="text-center">Select your school...</h1>
 
-    <div class="form-card">
-        <%= form_tag ('/profile') do%>
-            <%= select_tag "school_id", options_from_collection_for_select(@schools, "id", "name"), class: "form-control", include_blank: "Please select one..." %></br>
-            <%= submit_tag "Link to School", class: "btn btn-outline-primary" %>  
+
+    <%= form_for @user do |f| %>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, class: "form-control", :required => true %></br>
+
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, class: "form-control", :required => true %></br>
+
+        <h3>School Information</h3>
+
+        <%= f.fields_for :school do |s| %>
+            <%= s.label :name %>
+            <%= s.text_field :name, class: "form-control" %></br>
+
+            <%= s.label :address %>
+            <%= s.text_field :address, class: "form-control" %></br>
+
+            <%= s.label :city %>
+            <%= s.text_field :city, class: "form-control" %></br>
+
+            <%= s.label :state %>
+            <%= s.select :state, options_for_select(us_states), {prompt: true}, {class: "form-control"} %></br>
             
+            <%= s.label :zipcode %>
+            <%= s.text_field :zipcode, class: "form-control" %></br>
         <% end %>
-    </div>
+
+        <h3>Student Information</h3>
+            <%= f.fields_for :student do |s| %>
+                <%= s.label :first_name %>
+                <%= s.text_field :first_name, class: "form-control" %>
+
+                <%= s.label :last_name %>
+                <%= s.text_field :last_name, class: "form-control" %>
+
+                <%= s.label :grade %>
+                <%= s.select :grade, options_for_select(grades), {prompt: true}, {class: "form-control"} %></br>
+
+            <% end %>
+
+            <%= f.submit "Complete Profile", class: "btn btn-outline-light"  %>
+
+        <% end %>
+
+
+    

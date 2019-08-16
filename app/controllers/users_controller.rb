@@ -7,17 +7,14 @@ class UsersController < ApplicationController
 
     def new
         @user = User.new
-        @user.build_school
-        3.times {@user.build_household.students.build}
     end 
 
     def create 
-        raise params.inspect
-        if @user = User.find_by(email: params[:email]) && @user.school_id == nil
-            render :new
+        if @user = User.find_by(email: params[:email]) 
+            flash[:message] = "Account found. Please login in."
+            redirect_to '/'
         else 
             @user = User.create(user_params)
-            @schools = School.sort_by_zip(params[:zipcode])
                 if @user.save 
                     log_in(@user)
                     render partial: '/users/complete_profile'
@@ -32,6 +29,12 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
     end 
 
+    def edit 
+        @user = User.find(params[:id])
+        @user.build_school
+        3.times {@user.build_household.students.build}
+    end
+
     def update 
         raise params.inspect
         @user = User.find(current_user.id)
@@ -41,9 +44,7 @@ class UsersController < ApplicationController
         redirect_to user_path(@user)
     end 
 
-    def edit 
-        @user = User.find(params[:id])
-    end 
+     
 
 private 
 

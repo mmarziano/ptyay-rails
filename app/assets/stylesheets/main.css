@@ -170,13 +170,13 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-
 
 ::-webkit-input-placeholder {
     font-family: ' News Cycle', 'Helvetica', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     color: rgb(69, 172, 212);
   }
   
   :-ms-input-placeholder {
     font-family: 'News Cycle', 'Helvetica', sans-serif;
-    font-size: 16px; 
+    font-size: 18px; 
   }
   
   input {
@@ -185,17 +185,18 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-
 
   ::-webkit-label {
     font-family: 'News Cycle', 'Helvetica', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     color: rgb(69, 172, 212);
   }
   
   :-ms-label {
     font-family: 'News Cycle', 'Helvetica', sans-serif;
-    font-size: 16px; 
+    font-size: 18px; 
     color: rgb(69, 172, 212);
   }
   
   label {
+    font-size: 18px;
     font-family: 'News Cycle', 'Helvetica', sans-serif;
     color: rgb(69, 172, 212);
   }

@@ -8,46 +8,7 @@
     <%= f.label :password %>
     <%= f.password_field :password, class: "form-control", :required => true %></br>
 
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name, class: "form-control", :required => true %></br>
-
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name, class: "form-control", :required => true %></br>
-
-    <h4>School Information</h4>
-
-    <%= f.fields_for :school do |s| %>
-        <%= s.label :name %>
-        <%= s.text_field :name, class: "form-control" %></br>
-
-        <%= s.label :address %>
-        <%= s.text_field :address, class: "form-control" %></br>
-
-        <%= s.label :city %>
-        <%= s.text_field :city, class: "form-control" %></br>
-
-        <%= s.label :state %>
-        <%= s.select :state, options_for_select(us_states), {}, {class: "form-control"} %></br>
-        
-        <%= s.label :zipcode %>
-        <%= s.text_field :zipcode, class: "form-control" %></br>
-    <% end %>
-
-    <h4>Student Information</h4>
-        <%= f.fields_for :student do |s| %>
-            <%= s.label :first_name %>
-            <%= s.text_field :first_name, class: "form-control" %>
-
-            <%= s.label :last_name %>
-            <%= s.text_field :last_name, class: "form-control" %>
-
-            <%= s.label :grade %>
-            <%= s.text_field :grade, class: "form-control" %>
-
-        <% end %>
-    
-
-    <%= f.submit "Create Account" %>
+    <%= f.submit "Create Account", class: "btn btn-outline-light"  %>
 
 
 <% end %>

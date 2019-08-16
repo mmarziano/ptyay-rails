@@ -18,7 +18,6 @@ class SessionsController < ApplicationController
                 redirect_to edit_user_path(@user)
             else 
                 redirect_to signup_path
-
             end
     end 
 
