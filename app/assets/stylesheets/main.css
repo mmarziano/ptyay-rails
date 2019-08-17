@@ -124,7 +124,8 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-
     width: 100px;
     height: 100px;
     display: inline-block;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .profile h1 {
@@ -132,8 +133,8 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-
 }
 
 .profile-card {
-    width: 80%;
-    padding: 10px 10px 10px 10px;
+    width: 90%;
+    padding: 5px;
     margin: auto;
     background:  rgba(0, 0, 0, 0.30);
     box-shadow: 0 1px 6px rgba(255, 255, 255, 0.12), 0 1px 4px rgba(255, 255, 255, 0.24);
@@ -141,12 +142,101 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-
     margin-bottom: 15px;
     display: flex;
     align-items: center;
-    justify-content: center
+    justify-content: center;
 }
+
+.profile-card-blue {
+    background: rgba(0, 153, 255, 0.411);
+    width: 90%;
+    padding: 5px;
+    margin: auto;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+    border: none;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile-card-orange {
+    background: rgba(255, 145, 0, 0.534);
+    width: 90%;
+    padding: 5px;
+    margin: auto;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+    border: none;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile-card-green {
+    background: rgba(7, 182, 1, 0.616);
+    width: 90%;
+    padding: 5px;
+    margin: auto;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+    border: none;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile-card-yellow {
+    background: rgba(251, 255, 39, 0.411);
+    width: 90%;
+    padding: 5px;
+    margin: auto;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+    border: none;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile-card-red {
+    background: rgba(255, 0, 0, 0.658);
+    width: 90%;
+    padding: 5px;
+    margin: auto;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+    border: none;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .profile-card h1 {
     color: #fff;
     font-size: 2em;
 }
+
+.profile-card-orange .btn {
+    font-family: 'Covered By Your Grace', 'Helvetica', sans-serif;
+    font-size: 1.5em;
+    margin: 5px;
+    border: transparent;
+}
+
+.profile-card-red .btn {
+    font-family: 'Covered By Your Grace', 'Helvetica', sans-serif;
+    font-size: 1.5em;
+    margin: 5px;
+    border: transparent;
+}
+.profile-card-green .btn {
+    font-family: 'Covered By Your Grace', 'Helvetica', sans-serif;
+    font-size: 1.5em;
+    margin: 5px;
+    border: transparent;
+}
+.profile-card-yellow .btn {
+    font-family: 'Covered By Your Grace', 'Helvetica', sans-serif;
+    font-size: 1.5em;
+    margin: 5px;
+    border: transparent;
+}
+
 /* STICKY BOTTOM */
 
 .fixed-bottom {

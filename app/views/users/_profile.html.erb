@@ -3,20 +3,30 @@
         <img class="img-thumbnail rounded-circle rounded-sm" src=<%=@user.profile_img%> alt='Profile Image'>
     </div>
 
-<div class="profile-card">
+<div class="profile-card-blue">
     <h1><%=@user.full_name %></h1>
     
 </div>
 
-<div class="profile-card">
+<div class="profile-card-orange">
     <p><%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-outline-light" %></p>
 </div>
 
-<div class="profile-card">
+<% if @user.household_id.nil? %>
+    <div class="profile-card-green">
+        <p><%= link_to "Set Up Household", new_household_path, class: "btn btn-outline-light" %></p>
+    </div>
+<% else %>
+    <div class="profile-card-green">
+        <p><%= link_to "Edit Household", edit_household_path, class: "btn btn-outline-light" %></p>
+    </div>
+<% end %>
+
+<div class="profile-card-yellow">
     <p><%= link_to "View Events/Fundraisers", fundraisers_path, class: "btn btn-outline-light" %></p>
 </div>
 
-<div class="profile-card">
+<div class="profile-card-red">
     <p><%= link_to "Logout", '/logout', class: "btn btn-outline-light" %></p>
 </div>
 
