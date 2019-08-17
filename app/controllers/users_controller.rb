@@ -20,7 +20,7 @@ class UsersController < ApplicationController
                     log_in(@user)
                     render :show
                 else 
-                    raise @user.errors.full_messages.inspect
+                    @user.errors.full_messages.inspect
                     render :new
                 end  
             end

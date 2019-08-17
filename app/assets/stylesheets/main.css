@@ -218,3 +218,15 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-
     font-family: 'News Cycle', 'Helvetica', sans-serif;
     color: #fff;
   }
+
+  /* ERROR STYLING */
+
+  .field_with_errors input {
+      border: 1px solid red;
+  }
+  
+  #error_explanation {
+      padding: 10px;
+      margin: auto;
+      color: red;
+  }
