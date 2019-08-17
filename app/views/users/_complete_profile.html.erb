@@ -7,37 +7,9 @@
         <%= f.label :last_name %>
         <%= f.text_field :last_name, class: "form-control", :required => true %></br>
 
-        <h3>School Information</h3>
+        <h3>Select School</h3>
 
-        <%= f.fields_for :school do |s| %>
-            <%= s.label :name %>
-            <%= s.text_field :name, class: "form-control" %></br>
-
-            <%= s.label :address %>
-            <%= s.text_field :address, class: "form-control" %></br>
-
-            <%= s.label :city %>
-            <%= s.text_field :city, class: "form-control" %></br>
-
-            <%= s.label :state %>
-            <%= s.select :state, options_for_select(us_states), {prompt: true}, {class: "form-control"} %></br>
-            
-            <%= s.label :zipcode %>
-            <%= s.text_field :zipcode, class: "form-control" %></br>
-        <% end %>
-
-        <h3>Student Information</h3>
-            <%= f.fields_for :student do |s| %>
-                <%= s.label :first_name %>
-                <%= s.text_field :first_name, class: "form-control" %>
-
-                <%= s.label :last_name %>
-                <%= s.text_field :last_name, class: "form-control" %>
-
-                <%= s.label :grade %>
-                <%= s.select :grade, options_for_select(grades), {prompt: true}, {class: "form-control"} %></br>
-
-            <% end %>
+        <%= f.collection_select :school_id, School.all, :id, :name, class: "form-control", :required => true %></br>
 
             <%= f.submit "Complete Profile", class: "btn btn-outline-light"  %>
 

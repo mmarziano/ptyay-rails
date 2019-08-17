@@ -8,6 +8,18 @@
     <%= f.label :password %>
     <%= f.password_field :password, class: "form-control", :required => true %></br>
 
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, class: "form-control", :required => true %></br>
+
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, class: "form-control", :required => true %></br>
+
+    <h3>Select School</h3>
+
+    <%= f.label :school_name %>
+    <%= f.collection_select :school_id, School.all, :id, :name, {}, {class: "form-control", :required => true} %></br>
+
+
     <%= f.submit "Create Account", class: "btn btn-outline-light"  %>
 
 

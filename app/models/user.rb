@@ -11,7 +11,7 @@ class User < ApplicationRecord
     belongs_to :school, optional: true
     belongs_to :household, optional: true
     has_many :fundraisers
-    has_many :students, through: :household
+    has_many :students
 
     accepts_nested_attributes_for :school
     accepts_nested_attributes_for :students

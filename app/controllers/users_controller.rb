@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
     def new
         @user = User.new
+        
     end 
 
     def create 
@@ -17,7 +18,7 @@ class UsersController < ApplicationController
             @user = User.create(user_params)
                 if @user.save 
                     log_in(@user)
-                    render partial: '/users/complete_profile'
+                    render :show
                 else 
                     raise @user.errors.full_messages.inspect
                     render :new
@@ -31,16 +32,12 @@ class UsersController < ApplicationController
 
     def edit 
         @user = User.find(params[:id])
-        @user.build_school
-        3.times {@user.build_household.students.build}
+
     end
 
     def update 
-        raise params.inspect
-        @user = User.find(current_user.id)
-        @user.school_id = params[:school_id]
-        @user.save
-        byebug
+        @user = User.update(user_params)
+
         redirect_to user_path(@user)
     end 
 
@@ -49,7 +46,7 @@ class UsersController < ApplicationController
 private 
 
     def user_params
-        params.require(:user).permit(:username, :email, :password, :first_name, :last_name, :school_id, :household_id, :profile_img)
+        params.require(:user).permit(:username, :email, :password, :first_name, :last_name, :school_id, :household_id, :profile_img, school_attributes: [:name, :address, :city, :state, :zipcode], student: [:first_name, :last_name, :grade])
     end 
 
     def require_login

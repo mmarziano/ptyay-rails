@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
                 redirect_to user_path(@user)
             elsif @user && @user.authenticate(params[:password])
                 log_in(@user)
-                redirect_to edit_user_path(@user)
+                redirect_to new_user_path(@user)
             else 
                 redirect_to signup_path
             end
