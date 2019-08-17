@@ -31,6 +31,19 @@
     <%= f.label :school_name %>
     <%= f.collection_select :school_id, School.all, :id, :name, {}, {class: "form-control", :required => true} %></br>
 
+    <h3>Add Students</h3>
+
+    <%= f.fields_for :household do |h| %>
+        
+        <%= h.fields_for :students_attributes, Household.new.students.build do |student| %>
+            <%= student.label :first_name %>
+            <%= student.text_field :first_name, class: "form-control", required: true %></br>
+            <%= student.label :last_name %>
+            <%= student.text_field :last_name, class: "form-control", required: true %></br>
+            <%= student.label :grade %>
+            <%= student.collection_select :grade, grades, :to_s, :to_s, {}, {class: "form-control", :required => true} %></br>
+        <% end %>
+    <% end %>
 
     <%= f.submit "Create Account", class: "btn btn-outline-light"  %>
 

@@ -7,15 +7,17 @@ class UsersController < ApplicationController
 
     def new
         @user = User.new
-        
+        @user.build_household
+
     end 
 
     def create 
         if @user = User.find_by(email: params[:email]) 
             flash[:message] = "Account found. Please login in."
             redirect_to '/'
-        else 
+        else
             @user = User.create(user_params)
+            @household = Household.create(school_id: params[:user][:school_id])
                 if @user.save 
                     log_in(@user)
                     render :show
@@ -46,7 +48,7 @@ class UsersController < ApplicationController
 private 
 
     def user_params
-        params.require(:user).permit(:username, :email, :password, :first_name, :last_name, :school_id, :household_id, :profile_img, school_attributes: [:name, :address, :city, :state, :zipcode], student: [:first_name, :last_name, :grade])
+        params.require(:user).permit(:username, :email, :password, :first_name, :last_name, :school_id, :household_id, :profile_img, :household => [:students_attributes => [:first_name, :last_name, :grade]])
     end 
 
     def require_login

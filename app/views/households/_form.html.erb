@@ -1,0 +1,26 @@
+<% if @user.errors.any? %>
+            <div id="error_explanation">
+                <h2><%= pluralize(@user.errors.count, "error") %> prohibited this account from being created:</h2>
+            
+                <ul>
+                    <% @user.errors.full_messages.each do |msg| %>
+                        <li><%= msg %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% end %>
+
+        <%= form_for @household do |f| %>
+                <%= f.fields_for @household.build_student do |student| %>
+                    <%= student.label :first_name %>
+                    <%= student.text_field :first_name, class: "form-control", required: true %></br>
+                    <%= student.label :last_name %>
+                    <%= student.text_field :last_name, class: "form-control", required: true %></br>
+                    <%= student.label :grade %>
+                    <%= student.collection_select :grade, grades, :to_s, :to_s, {}, {class: "form-control", :required => true} %></br>
+            <% end %>
+   
+            <%= f.submit "Add Student", class: "btn btn-outline-light"  %>
+
+
+<% end %>

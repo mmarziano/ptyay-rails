@@ -14,8 +14,8 @@ class User < ApplicationRecord
     has_many :fundraisers
     has_many :students
 
-    accepts_nested_attributes_for :school
-    accepts_nested_attributes_for :students
+    accepts_nested_attributes_for :household
+    
 
     def full_name 
         self.first_name.capitalize + " " + self.last_name.capitalize

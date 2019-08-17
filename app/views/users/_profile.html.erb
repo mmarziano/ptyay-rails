@@ -14,11 +14,11 @@
 
 <% if @user.household_id.nil? %>
     <div class="profile-card-green">
-        <p><%= link_to "Set Up Household", new_household_path, class: "btn btn-outline-light" %></p>
+        <p><%= link_to "Add Students", new_household_path, class: "btn btn-outline-light" %></p>
     </div>
 <% else %>
     <div class="profile-card-green">
-        <p><%= link_to "Edit Household", edit_household_path, class: "btn btn-outline-light" %></p>
+        <p><%= link_to "Edit Students", edit_household_path, class: "btn btn-outline-light" %></p>
     </div>
 <% end %>
 
