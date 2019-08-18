@@ -16,6 +16,10 @@ class HouseholdsController < ApplicationController
 
     end 
 
+    def show 
+        @household = Household.find(params[:id])
+    end
+
     private 
 
         def student_params

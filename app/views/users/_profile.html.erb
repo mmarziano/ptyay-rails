@@ -18,7 +18,7 @@
         </div>
     <% else %>
         <div class="profile-card-green">
-            <p><%= link_to "Edit Students", edit_household_student_path(current_user.household_id, 1), class: "btn btn-outline-light" %></p>
+            <p><%= link_to "Edit Students", household_path(current_user.household_id), class: "btn btn-outline-light" %></p>
         </div>
     <% end %>
 
