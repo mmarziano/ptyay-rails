@@ -7,8 +7,6 @@ class UsersController < ApplicationController
 
     def new
         @user = User.new
-        @user.build_household
-
     end 
 
     def create 
@@ -17,7 +15,7 @@ class UsersController < ApplicationController
             redirect_to '/'
         else
             @user = User.create(user_params)
-            @household = Household.create(school_id: params[:user][:school_id])
+            @household = @user.build_household(school_id: params[:user][:school_id])
                 if @user.save 
                     log_in(@user)
                     render :show

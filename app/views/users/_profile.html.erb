@@ -1,32 +1,32 @@
 
     <div class="profile profile-card text-center">
-        <img class="img-thumbnail rounded-circle rounded-sm" src=<%=@user.profile_img%> alt='Profile Image'>
+        <img class="img-thumbnail rounded-circle rounded-sm" src=<%=current_user.profile_img%> alt='Profile Image'>
     </div>
 
-<div class="profile-card-blue">
-    <h1><%=@user.full_name %></h1>
-    
-</div>
-
-<div class="profile-card-orange">
-    <p><%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-outline-light" %></p>
-</div>
-
-<% if @user.household_id.nil? %>
-    <div class="profile-card-green">
-        <p><%= link_to "Add Students", new_household_path, class: "btn btn-outline-light" %></p>
+    <div class="profile-card-blue">
+        <h1><%=current_user.full_name %></h1>
+        
     </div>
-<% else %>
-    <div class="profile-card-green">
-        <p><%= link_to "Edit Students", edit_household_path, class: "btn btn-outline-light" %></p>
+
+    <div class="profile-card-orange">
+        <p><%= link_to "Edit Profile", edit_user_path(current_user), class: "btn btn-outline-light" %></p>
     </div>
-<% end %>
 
-<div class="profile-card-yellow">
-    <p><%= link_to "View Events/Fundraisers", fundraisers_path, class: "btn btn-outline-light" %></p>
-</div>
+    <% if current_user.household.students.empty? %>
+        <div class="profile-card-green">
+            <p><%= link_to "Add Students", new_household_student_path(current_user.household_id), class: "btn btn-outline-light" %></p>
+        </div>
+    <% else %>
+        <div class="profile-card-green">
+            <p><%= link_to "Edit Students", edit_household_student_path(current_user.household_id, 1), class: "btn btn-outline-light" %></p>
+        </div>
+    <% end %>
 
-<div class="profile-card-red">
-    <p><%= link_to "Logout", '/logout', class: "btn btn-outline-light" %></p>
-</div>
+    <div class="profile-card-yellow">
+        <p><%= link_to "View Events/Fundraisers", fundraisers_path, class: "btn btn-outline-light" %></p>
+    </div>
+
+    <div class="profile-card-red">
+        <p><%= link_to "Logout", '/logout', class: "btn btn-outline-light" %></p>
+    </div>
 

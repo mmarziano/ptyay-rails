@@ -1,0 +1,10 @@
+<%= form_for household_students_path(@household, @household.students.build) do |f| %>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, class: "form-control", required: true %></br>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, class: "form-control", required: true %></br>
+        <%= f.label :grade %>
+        <%= f.collection_select :grade, grades, :to_s, :to_s, {}, {class: "form-control", :required => true} %></br>
+
+    <%= f.submit "Add Student", class: "btn btn-outline-light" %>
+<% end %>

@@ -2,10 +2,7 @@ class HouseholdsController < ApplicationController
     layout "main"
     
     def new
-        @user = current_user
         @household = Household.new
-    
-        
     end 
 
     def create 
