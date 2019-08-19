@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     end 
 
     def create 
+        byebug
         if @user = User.find_by(email: params[:email]) 
             flash[:message] = "Account found. Please login in."
             redirect_to '/'
