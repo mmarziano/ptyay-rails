@@ -18,7 +18,7 @@ class StudentsController < ApplicationController
             @student.school = current_user.school
 
                 if @student.save 
-                    render :show
+                    render "users/show"
                 else 
                     @student.errors.full_messages.inspect
                     render :new
@@ -27,6 +27,11 @@ class StudentsController < ApplicationController
     end
 
     def edit 
+        @student = Student.find(params[:id])
+        @household = Household.find(params[:household_id])
+    end 
+
+    def update 
 
     end 
 

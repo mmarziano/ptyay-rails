@@ -117,8 +117,7 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
 .header-frame {
     width: 90%;
     padding: 50px;
-    margin: 10px 10px 10px 10px;
-    background:  rgba(0, 0, 0, 0.50);
+    background:  rgb(199, 239, 255);
     box-shadow: 0 1px 6px rgba(255, 255, 255, 0.12), 0 1px 4px rgba(255, 255, 255, 0.24);
     border: none;
     margin-bottom: 15px;
@@ -126,10 +125,13 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
     align-items: center;
     justify-content: center;
 }
+.header-frame h1 {
+    color: #000;
+}
 
 .frame {
-    width: 80%;
-    padding: 25px;
+    width: 90%;
+    padding: 50px;
     background:  rgba(0, 0, 0, 0.30);
     box-shadow: 0 1px 6px rgba(255, 255, 255, 0.12), 0 1px 4px rgba(255, 255, 255, 0.24);
     border: none;
@@ -146,6 +148,15 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
 
 .frame tr {
     border-bottom: 1px solid #fff;
+}
+
+.form-card {
+    width: 90%;
+    padding: 50px;
+    background:  rgba(0, 0, 0, 0.30);
+    box-shadow: 0 1px 6px rgba(255, 255, 255, 0.12), 0 1px 4px rgba(255, 255, 255, 0.24);
+    border: none;
+    margin-bottom: 15px;
 }
 
 /* PROFILE STYLING */
@@ -176,7 +187,7 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
 
 .profile-card-blue {
     background: rgba(0, 153, 255, 0.411);
-    width: 60%;
+    width: 90%;
     padding: 5px;
     margin: auto;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
@@ -188,7 +199,7 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
 }
 .profile-card-orange {
     background: rgba(255, 145, 0, 0.534);
-    width: 60%;
+    width: 90%;
     padding: 5px;
     margin: auto;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
@@ -200,7 +211,7 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
 }
 .profile-card-green {
     background: rgba(7, 182, 1, 0.616);
-    width: 60%;
+    width: 90%;
     padding: 5px;
     margin: auto;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
@@ -212,7 +223,7 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
 }
 .profile-card-yellow {
     background: rgba(251, 255, 39, 0.411);
-    width: 60%;
+    width: 90%;
     padding: 5px;
     margin: auto;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
@@ -224,7 +235,7 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
 }
 .profile-card-red {
     background: rgba(255, 0, 0, 0.658);
-    width: 60%;
+    width: 90%;
     padding: 5px;
     margin: auto;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
