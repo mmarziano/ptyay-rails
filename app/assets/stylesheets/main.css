@@ -6,7 +6,7 @@ body p {
     font-family: 'News Cycle', 'Helvetica', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-serif;}
+h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
 
 .blue-overlay {
     background-color:#01166f;
@@ -77,7 +77,7 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-
 .login h1 {
     text-align: center;
     color: #fff;
-    font-family: 'Covered By Your Grace', sans-serif;
+    font-family: 'Fjalla One', sans-serif;
     font-size: 3em;
 }
 
@@ -100,7 +100,7 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-
 
 #tagline h1 {
     margin: 0;
-    font-family: 'Covered By Your Grace', 'Helvetica', sans-serif;
+    font-family: 'Fjalla One', sans-serif;
     font-size: 4em;
     color: #fff;
 }
@@ -114,10 +114,22 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-
 
 /* CARD STYLING */
 
-.frame {
+.header-frame {
     width: 90%;
     padding: 50px;
-    margin: auto;
+    margin: 10px 10px 10px 10px;
+    background:  rgba(0, 0, 0, 0.50);
+    box-shadow: 0 1px 6px rgba(255, 255, 255, 0.12), 0 1px 4px rgba(255, 255, 255, 0.24);
+    border: none;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.frame {
+    width: 80%;
+    padding: 25px;
     background:  rgba(0, 0, 0, 0.30);
     box-shadow: 0 1px 6px rgba(255, 255, 255, 0.12), 0 1px 4px rgba(255, 255, 255, 0.24);
     border: none;
@@ -129,7 +141,7 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-
 
 .frame td {
     color: #fff;
-    font-size: 24px;
+    font-size: 18px;
 }
 
 .frame tr {
@@ -229,26 +241,26 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-
 }
 
 .profile-card-orange .btn {
-    font-family: 'Covered By Your Grace', 'Helvetica', sans-serif;
+    font-family: 'Fjalla One', sans-serif;
     font-size: 1.5em;
     margin: 5px;
     border: transparent;
 }
 
 .profile-card-red .btn {
-    font-family: 'Covered By Your Grace', 'Helvetica', sans-serif;
+    font-family: 'Fjalla One', sans-serif;
     font-size: 1.5em;
     margin: 5px;
     border: transparent;
 }
 .profile-card-green .btn {
-    font-family: 'Covered By Your Grace', 'Helvetica', sans-serif;
+    font-family: 'Fjalla One', sans-serif;
     font-size: 1.5em;
     margin: 5px;
     border: transparent;
 }
 .profile-card-yellow .btn {
-    font-family: 'Covered By Your Grace', 'Helvetica', sans-serif;
+    font-family: 'Fjalla One', sans-serif;
     font-size: 1.5em;
     margin: 5px;
     border: transparent;

@@ -1,35 +1,41 @@
 <div class="clear"></div>
 
-<div class="frame text-center">
-    <h1>Household Information</h1>
+<div class="row">
+    <div class="header-frame text-center">
+        <h1>Household Information</h1>
+    </div>
 </div>
 
-<div class="frame text-center">
-    <table>
-        <tr>
-            <th><h3>Parent(s)/Guardian(s)</h3></th>
-        </tr>
-        <tr>
-            <% @household.users.each do |u| %>
-                <td><%= u.full_name %></td>
-            <% end %>
-        </tr>
-    </table>
-</div>
+    <div class="row clearfix">
+            <div class="frame text-center">
+                <table class="table table-striped ">
+                    <tr>
+                        <th><h3>Parent(s)/Guardian(s)</h3></th>
+                    </tr>
+                    <tr>
+                        <% @household.users.each do |u| %>
+                            <td><%= u.full_name %></td>
+                        <% end %>
+                    </tr>
+                </table>
+            </div>
+    </div>
+    <div class="row clearfix">
+            <div class="frame text-center">
+                <table class="table table-striped">
+                    <tr>
+                        <th><h3>Student Name</h3></th>
+                        <th><h3>Grade</h3></th>
+                        <th><h3>Action</h3></th>
+                    </tr>
+                    <tr>
+                        <% @household.students.each do |s| %>
+                            <td><%= s.full_name %></td>
+                            <td><%= s.grade %></td>
+                            <td><%= link_to "Edit", edit_household_student_path(s)%></td>
+                        <% end %>
+                    </tr>
+                </table>
+            </div>
+        </div>  
 
-<div class="clear"></div>
-
-<div class="frame text-center">
-    <table>
-        <tr>
-            <th><h3>Student(s)</h3></th>
-            <hr>
-        </tr>
-        <tr>
-            <% @household.students.each do |s| %>
-                <td><%= s.full_name %></td>
-            <% end %>
-        </tr>
-    </table>
-   
-</div>

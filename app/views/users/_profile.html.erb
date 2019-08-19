@@ -11,17 +11,11 @@
     <div class="profile-card-orange">
         <p><%= link_to "Edit Profile", edit_user_path(current_user), class: "btn btn-outline-light" %></p>
     </div>
-
-    <% if current_user.household.students.empty? %>
-        <div class="profile-card-green">
-            <p><%= link_to "Add Students", new_household_student_path(current_user.household_id), class: "btn btn-outline-light" %></p>
+  
+    <div class="profile-card-green">
+            <p><%= link_to "View Household", household_path(current_user.household_id), class: "btn btn-outline-light" %></p>
         </div>
-    <% else %>
-        <div class="profile-card-green">
-            <p><%= link_to "Edit Students", household_path(current_user.household_id), class: "btn btn-outline-light" %></p>
-        </div>
-    <% end %>
-
+  
     <div class="profile-card-yellow">
         <p><%= link_to "View Events/Fundraisers", fundraisers_path, class: "btn btn-outline-light" %></p>
     </div>
