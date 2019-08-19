@@ -15,11 +15,11 @@
                         <th><h3>Grade</h3></th>
                         <th><h3>Action</h3></th>
                     </tr>
-                        <% @household.students.each do |s| %>
+                        <% @household.students.each do |student| %>
                         <tr>
-                            <td><%= s.full_name %></td>
-                            <td><%= s.grade %></td>
-                            <td><%= link_to "Edit", edit_household_student_path(s), :class => "btn btn-primary"%></td>
+                            <td><%= student.full_name %></td>
+                            <td><%= student.grade %></td>
+                            <td><%= link_to "Edit", edit_household_student_path(student), :class => "btn btn-primary"%></td>
                         </tr>
                         <% end %>
        

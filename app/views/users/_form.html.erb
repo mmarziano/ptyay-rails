@@ -28,7 +28,7 @@
     <%= f.label :school_name %>
     <%= f.collection_select :school_id, School.all, :id, :name, {}, {class: "form-control", :required => true} %></br>
 
-    <%= f.submit "Create Account", class: "btn btn-outline-light"  %>
+    <%= f.submit class: "btn btn-outline-light"  %>
 
 
 <% end %>

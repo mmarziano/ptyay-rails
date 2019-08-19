@@ -3,9 +3,7 @@ class StudentsController < ApplicationController
 
     def new
         @household = current_user.household
-        @household.students.build
-        @household.students.build
-        @household.students.build
+        @student = Student.new
     end 
 
     def create
@@ -28,7 +26,7 @@ class StudentsController < ApplicationController
 
     def edit 
         @student = Student.find(params[:id])
-        @household = Household.find(params[:household_id])
+        @household = @student.household_id
     end 
 
     def update 

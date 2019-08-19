@@ -10,9 +10,8 @@ class HouseholdsController < ApplicationController
         @household = Household.create(school_id: current_user.school_id)
         current_user.household_id = @household.id
         current_user.save
-        byebug
         @student = Student.find_or_create_by(student_params)
-        byebug
+        
         redirect_to user_path(current_user)
 
     end 
