@@ -3,7 +3,9 @@ class StudentsController < ApplicationController
 
     def new
         @household = current_user.household
-        @student = Student.new
+        @household.students.build
+        @household.students.build
+        @household.students.build
     end 
 
     def create
@@ -14,6 +16,7 @@ class StudentsController < ApplicationController
             @student = Student.new(student_params)
             @student.household = Household.find(params[:household_id])
             @student.school = current_user.school
+
                 if @student.save 
                     render :show
                 else 
@@ -30,7 +33,7 @@ class StudentsController < ApplicationController
     private 
 
     def student_params 
-        params.require(:student).permit(:first_name, :last_name, :grade)
+        params.require(:student).permit(:first_name, :last_name, :grade, :household_id)
     end 
 
 end

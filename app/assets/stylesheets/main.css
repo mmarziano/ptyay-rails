@@ -50,6 +50,11 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-
     color: #fff;
 }
 
+.clear {
+    width: 100%;
+    height: 25px;
+}
+
 .side-panel {
     position: relative;
     background-color: #01166f;
@@ -109,14 +114,26 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Covered By Your Grace', 'Helvetica', sans-
 
 /* CARD STYLING */
 
-.form-card {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
-    width: 80%;
-    padding: 50px 50px 50px 50px;
+.frame {
+    width: 90%;
+    padding: 50px;
     margin: auto;
-    margin-top: 250px;
+    background:  rgba(0, 0, 0, 0.30);
+    box-shadow: 0 1px 6px rgba(255, 255, 255, 0.12), 0 1px 4px rgba(255, 255, 255, 0.24);
+    border: none;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.frame td {
+    color: #fff;
+    font-size: 24px;
+}
+
+.frame tr {
+    border-bottom: 1px solid #fff;
 }
 
 /* PROFILE STYLING */
