@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
-
+    layout "application"
+    
     def index
         @user = User.new
     end
@@ -14,9 +15,9 @@ class SessionsController < ApplicationController
                 log_in(@user)
                 redirect_to user_path(@user)
             elsif @user && @user.valid_password?(params[:password])
-                redirect_to new_user_path(@user)
+                redirect_to signup_path(@user)
             else 
-                redirect_to signup_path
+                redirect_to new_user_path
             end
     end 
 

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     layout "main"
-    before_action :require_login, only: [:show, :edit, :update, :destroy]
+   
     
     def index
     end 
@@ -10,7 +10,6 @@ class UsersController < ApplicationController
     end 
 
     def create 
-        byebug
         if @user = User.find_by(email: params[:email]) 
             flash[:message] = "Account found. Please login in."
             redirect_to '/'

@@ -29,7 +29,6 @@ gem 'jbuilder', '~> 2.5'
 # Use Roo for spreadsheet import
  gem "roo", "~> 2.8.0"
 
- gem 'devise'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
