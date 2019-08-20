@@ -4,6 +4,6 @@
         <%= f.label :last_name %>
         <%= f.text_field :last_name, class: "form-control", required: true %></br>
         <%= f.label :grade %>
-        <%= f.collection_select :grade, grades, :to_s, :to_s, {}, {class: "form-control", :required => true}  %></br>
+        <%= f.collection_select :grade, grades, :to_str, :to_str, {}, {class: "form-control", :required => true}  %></br>
     <%= f.submit class: "btn btn-outline-light" %>
 <% end %>

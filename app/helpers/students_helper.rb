@@ -2,22 +2,22 @@ module StudentsHelper
 
     def grades 
         [
-          'PK2',
-          'PK3',
-          'PK4',
-          'K',
-          '1st',
-          '2nd',
-          '3rd',
-          '4th',
-          '5th',
-          '6th',
-          '7th',
-          '8th',
-          '9th',
-          '10th',
-          '11th',
-          '12th',
+          'Pre-K 2',
+          'Pre-K 3',
+          'Pre-K 4',
+          'Kindergarten',
+          '1st Grade',
+          '2nd Grade',
+          '3rd Grade',
+          '4th Grade',
+          '5th Grade',
+          '6th Grade',
+          '7th Grade',
+          '8th Grade',
+          '9th Grade',
+          '10th Grade',
+          '11th Grade',
+          '12th Grade',
           
         ]
     end 
