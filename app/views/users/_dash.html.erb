@@ -1,12 +1,19 @@
 <div class="clear"></div>
 
 <div class="row">
+    <div class="col-md-6 col-sm-6">
         <div class="header-frame text-center">
-            <h1>Household Information</h1>
+            <h1>Profile</h1>
         </div>
+    </div>
+    <div class="col-md-6 col-sm-6">
+        <div class="header-frame text-center">
+            <h1>Household</h1>
+        </div>
+    </div>
 </div>
-
     <div class="row clearfix">
+        <div class="col-md-6 col-sm-6">
             <div class="frame text-center">
                 <table class="table table-striped">
                     <tr>
@@ -24,6 +31,7 @@
        
                 </table>
             </div>
-        </div>  
+        </div>
+    </div>  
         <%= link_to 'Add Student', new_household_student_path(@household), :class => "btn btn-success" %>
 

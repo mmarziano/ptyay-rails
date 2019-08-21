@@ -32,7 +32,6 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
 }
 
 .full-panel img {
-    margin: auto;
     padding-top: 50px;
     padding-bottom: 50px;
 }
@@ -89,6 +88,14 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
     display: block;
     width: 400px;
     height: auto;
+}
+
+.logo-sm {
+    margin-left: 20px;
+    display: block;
+    width: 200px;
+    height: auto;
+    float: left;
 }
 
 /* TAGLINE */

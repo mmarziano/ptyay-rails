@@ -63,3 +63,18 @@ has_many students
 		   Student
 belongs_to school
 belongs_to household
+
+### ADD THIS ####
+
+Comments model
+belong to fundraiser
+have many users, through fundraisers
+
+User
+have many comments, through fundraisers
+
+fundraisers
+has_many comments
+
+@dwayne.
+@dwyn
