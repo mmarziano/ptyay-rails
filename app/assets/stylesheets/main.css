@@ -193,9 +193,7 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
     box-shadow: 0 1px 6px rgba(255, 255, 255, 0.12), 0 1px 4px rgba(255, 255, 255, 0.24);
     border: none;
     margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  
 }
 
 .profile-card-blue {

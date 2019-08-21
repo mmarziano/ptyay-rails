@@ -1,4 +1,4 @@
-    <% if @user.errors.any? %>
+<% if @user.errors.any? %>
             <div id="error_explanation">
                 <h2><%= pluralize(@user.errors.count, "error") %> prohibited this account from being created:</h2>
             
@@ -11,11 +11,6 @@
         <% end %>
 
 <%= form_for @user do |f| %>
-    <%= f.label :email %>
-    <%= f.email_field :email, class: "form-control", :required => true %></br>
-
-    <%= f.label :password %>
-    <%= f.password_field :password, class: "form-control", :required => true %></br>
 
     <%= f.label :first_name %>
     <%= f.text_field :first_name, class: "form-control", :required => true %></br>

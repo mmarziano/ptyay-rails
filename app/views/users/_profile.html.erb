@@ -1,6 +1,7 @@
 
     <div class="profile-card text-center">
-        <img src="<%=current_user.profile_img%>" alt='Profile Image'>
+        <%= image_tag(@user.profile_img) %>
+        <%= link_to "Edit", edit_user_path(current_user), :class => "btn btn-link", :style => "float: right"%>
     </div>
 
     <div class="profile-card-blue">
