@@ -125,8 +125,8 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
 
 .header-frame {
     width: 90%;
-    height: 200px;
-    background:  rgba(199, 239, 255, 0.3);
+    height: 150px;
+    background:  rgba(199, 239, 255, 0.6);
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
     border: none;
     margin-bottom: 15px;
@@ -138,8 +138,6 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
     color: #fff;
 }
 
-
-
 .frame {
     width: 90%;
     padding: 50px;
@@ -147,9 +145,7 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
     box-shadow: 0 1px 6px rgba(255, 255, 255, 0.12), 0 1px 4px rgba(255, 255, 255, 0.24);
     border: none;
     margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    
 }
 
 .frame td {
@@ -159,6 +155,12 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
 
 .frame tr {
     border-bottom: 1px solid #fff;
+}
+
+.frame p, span {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 20px;
+    color: #fff;
 }
 
 .form-card {
@@ -201,7 +203,7 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
     width: 90%;
     padding: 5px;
     margin: auto;
-    box-shadow: 0 1px 6px rgba(255, 255, 255, 0.12), 0 1px 4px rgba(255, 255, 255, 0.24);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
     border: none;
     margin-bottom: 15px;
     display: flex;
@@ -359,6 +361,15 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
     font-family: 'News Cycle', 'Helvetica', sans-serif;
     color: #fff;
   }
+
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
 
   /* ERROR STYLING */
 
