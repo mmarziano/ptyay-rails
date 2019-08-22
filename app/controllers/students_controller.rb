@@ -6,6 +6,7 @@ class StudentsController < ApplicationController
     end 
 
     def create
+        @user = current_user
         if @student = Student.find_by(student_params) 
             flash[:message] = "Student already exists."
             redirect_to user_path(current_user)

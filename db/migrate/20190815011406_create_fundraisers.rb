@@ -8,7 +8,11 @@ class CreateFundraisers < ActiveRecord::Migration[5.2]
       t.decimal :amt_raised, precision: 16, scale: 2
       t.string :status
       t.integer :goal
+      t.integer :price
+      t.time :time
       t.date :date
+      t.integer :duration
+      t.string :location
       t.string :school_year
       t.string :admin_notes
 

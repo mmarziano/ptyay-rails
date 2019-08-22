@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :fundraisers do
     resources :reservations, only: :new
   end 
-  
+  resources :reservations
   resources :schools
   resources :households do 
     resources :students, only: :new

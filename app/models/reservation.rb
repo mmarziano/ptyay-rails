@@ -1,4 +1,4 @@
 class Reservation < ApplicationRecord
-    belong_to :fundraiser
-    belong_to :user
+    belongs_to :fundraiser
+    belongs_to :user
 end

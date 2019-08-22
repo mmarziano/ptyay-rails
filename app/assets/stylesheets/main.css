@@ -199,6 +199,11 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
     margin-bottom: 15px;
 }
 
+.form-card td, th {
+    color: #fff;
+    font-size: 18px;
+}
+
 /* PROFILE STYLING */
 
 .profile h1 {
