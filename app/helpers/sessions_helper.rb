@@ -22,5 +22,11 @@ module SessionsHelper
           session[:user_id] = nil 
         end
       end 
+
+      # Returns true if the user is an admin.
+
+      def admin?
+        current_user.admin == true
+      end 
       
 end

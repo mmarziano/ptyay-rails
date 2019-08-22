@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
     include SchoolsHelper
     include StudentsHelper
     include UsersHelper
+    include FundraisersHelper
     
     def index 
        
