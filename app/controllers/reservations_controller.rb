@@ -9,12 +9,21 @@ class ReservationsController < ApplicationController
     end 
 
     def create
-        raise params.inspect
+        @reservation = Reservation.new(fundraiser_id: params[:reservation][:fundraiser_id], user_id: current_user.id, number_attending: params[:reservation][:number_attending])
+        params[:reservation][:id].reject!{|id| id == ""}
+        @student = Student.find(params[:reservation][:id])
+        @reservation.attendees = @student
+        if @reservation.save
+            redirect_to reservation_path(@reservation)
+        else 
+            @reservation.errors.full_messages.inspect
+            render :new
+        end
     end 
 
     private 
         def reservation_params
-            
+            params.require(:reservation).permit(:fundraiser_id, :number_attending, :id)
         end 
 
 end
