@@ -68,7 +68,7 @@
                         </tr>
                             <% @user.school.fundraisers.each do |fundraiser| %>
                             <tr>
-                                <td><%= link_to 'View Details/RSVP!', new_fundraiser_reservation_path(fundraiser), class: "btn btn-primary" %>
+                                <td><%= link_to 'View Details/RSVP!', new_fundraiser_reservation_path(fundraiser), class: "btn btn-primary" %></td>
                                 <td><%= fundraiser.title %></td>
                                 <td><%= fundraiser.date %></td>
                                 <td><%= fundraiser.goal %></td>

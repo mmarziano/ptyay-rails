@@ -1,7 +1,9 @@
 <div class="clear"></div>
     <div class="frame-full">
-        <h2 style="color: rgb(0, 141, 184)"><%= @fundraiser.title %></h2>
-        <div class="line"></div>
+ 
+    <div class="line"></div>
+    
+    <h2 style="color: rgb(0, 141, 184)"><%= @fundraiser.title %></h2>
         <p><%= @fundraiser.description %></p>
 
             <table class="table table-striped text-center">
@@ -18,4 +20,10 @@
                     <td>$<%= @fundraiser.price %></td>
                 </tr>
             </table>
+        <% if !current_user.rsvpd(@fundraiser).empty? %>
+            <span style="color: green; float: left">Already RSVP'd!</span>
+            <%= link_to "Cancel Reservation", reservation_path(current_user.rsvpd(@fundraiser)), method: :delete, class: "btn btn-danger", style: "float: right"%>
+        <% else %>
+            <%= link_to 'RSVP!', new_fundraiser_reservation_path(@fundraiser), class: "btn btn-primary", style: "float: right" %>
+        <% end %>
 </div>

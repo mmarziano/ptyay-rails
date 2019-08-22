@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
 
     def create
         @user = User.find_by(email: params[:email])
-            if @user && @user.valid_password?(params[:password])&& @user.school_id != nil
+            if @user && @user.authenticate(params[:password])&& @user.school_id != nil
                 log_in(@user)
                 redirect_to user_path(@user)
             elsif @user && @user.valid_password?(params[:password])

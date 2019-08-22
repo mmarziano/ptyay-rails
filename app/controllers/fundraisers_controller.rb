@@ -20,6 +20,8 @@ class FundraisersController < ApplicationController
 
     def show 
         @fundraiser = Fundraiser.find(params[:id])
+        @household = current_user.household
+        @reservation = Reservation.find_by(fundraiser_id: @fundraiser.id, household_id: @household.id)
     end
 
     def edit 

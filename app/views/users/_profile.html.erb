@@ -5,7 +5,7 @@
     <div class="profile-card data-box text-center">
         <h1>Count Me In!</h1>
         <div class="line"></div>
-        <% if current_user.rsvpd? %>
+        <% if current_user.count_me_in? %>
             <%= render partial: "users/reservations" %>
         <% end %>
     </div>

@@ -21,7 +21,13 @@ class User < ApplicationRecord
         self.first_name.capitalize + " " + self.last_name.capitalize
     end 
 
-    def rsvpd?
+    def rsvpd(fundraiser)
+      self.household.reservations.select do |r|
+        r.fundraiser_id == fundraiser.id 
+      end 
+    end 
+
+    def count_me_in?
       !self.household.reservations.nil?
     end 
 
