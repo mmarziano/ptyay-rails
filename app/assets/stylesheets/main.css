@@ -134,12 +134,39 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
     align-items: center;
     justify-content: center;
 }
+
+.header-frame-full {
+    width: 95%;
+    height: 150px;
+    background:  rgba(199, 239, 255, 0.6);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+    border: none;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .header-frame h1 {
     color: #fff;
 }
 
+.frame h1 {
+    color: rgb(0, 141, 184);
+}
+
 .frame {
     width: 90%;
+    padding: 50px;
+    background:  rgba(0, 0, 0, 0.30);
+    box-shadow: 0 1px 6px rgba(255, 255, 255, 0.12), 0 1px 4px rgba(255, 255, 255, 0.24);
+    border: none;
+    margin-bottom: 15px;
+    
+}
+
+.frame-full {
+    width: 95%;
     padding: 50px;
     background:  rgba(0, 0, 0, 0.30);
     box-shadow: 0 1px 6px rgba(255, 255, 255, 0.12), 0 1px 4px rgba(255, 255, 255, 0.24);
@@ -173,13 +200,6 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
 }
 
 /* PROFILE STYLING */
-.profile img {
-    width: 100px;
-    height: 100px;
-    display: inline-block;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
 
 .profile h1 {
     color: #fff;
@@ -193,7 +213,6 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
     box-shadow: 0 1px 6px rgba(255, 255, 255, 0.12), 0 1px 4px rgba(255, 255, 255, 0.24);
     border: none;
     margin-bottom: 15px;
-  
 }
 
 .profile-card-blue {
@@ -360,13 +379,11 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
     color: #fff;
   }
 
-  hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+  .line {
+    height: 3px;
+    border-top: 1px solid #fff;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
   /* ERROR STYLING */

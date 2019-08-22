@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-md-6 col-sm-6">
         <div class="header-frame text-center">
-            <h1>School</h1>
+            <h1>Profile</h1>
         </div>
     </div>
     <div class="col-md-6 col-sm-6">
@@ -15,12 +15,14 @@
     <div class="row clearfix">
         <div class="col-md-6 col-sm-6">
             <div class="frame">
+                <h1>My School</h1>
+                <div class="line"></div>
                     <h3><%=@user.school.name%></h3></br>
                     <span>
                         <%=@user.school.address%></br>
                         <%=@user.school.city%>, <%=@user.school.state%> <%=@user.school.zipcode%></br>
                     </span>
-                    <%= link_to 'Edit School', edit_school_path, :class => "btn btn-primary", :style=> 'float: right' %>
+                    <%= link_to "Edit Profile", edit_user_path(current_user), :class => "btn btn-primary", :style => "float: right"%>
 
             </div>
         </div>
@@ -44,5 +46,32 @@
             </div>
         </div>
     </div>  
-       
+    
+<div class="clear"></div>
 
+<div class="row">
+    <div class="col-md-12 col-sm-12">
+        <div class="header-frame-full text-center">
+            <h1>Fundraisers/Events</h1>
+        </div>
+    </div>                     
+    <div class="col-md-12 col-sm-12">
+            <div class="frame-full text-center">
+                    <table class="table table-striped">
+                        <tr>
+                            <th><h3>Student Name</h3></th>
+                            <th><h3>Grade</h3></th>
+                            <th><h3>Action</h3></th>
+                        </tr>
+                            <% @household.students.each do |student| %>
+                            <tr>
+                                <td><%= student.full_name %></td>
+                                <td><%= student.grade %></td>
+                                <td><%= link_to "Edit", edit_student_path(student), :class => "btn btn-primary"%></td>
+                            </tr>
+                            <% end %>
+                    </table>
+                    <%= link_to 'Add Student', new_household_student_path(@household), :class => "btn btn-primary", :style => "float: left" %>
+            </div>
+        </div>   
+    </div>                         
