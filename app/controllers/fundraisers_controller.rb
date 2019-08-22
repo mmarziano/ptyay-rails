@@ -18,6 +18,10 @@ class FundraisersController < ApplicationController
         end 
     end
 
+    def show 
+        @fundraiser = Fundraiser.find(params[:id])
+    end
+
     def edit 
         @fundraiser = Fundraiser.find(params[:id])
     end 
