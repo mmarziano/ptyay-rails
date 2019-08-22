@@ -1,6 +1,5 @@
 class ReservationsController < ApplicationController
     layout "main"
-    
 
     def new 
         @reservation = Reservation.new
@@ -19,7 +18,8 @@ class ReservationsController < ApplicationController
             redirect_to reservation_path(@reservation)
         else 
             @reservation.errors.full_messages.inspect
-            render :new
+
+            render :edit
         end
     end 
 
@@ -27,6 +27,13 @@ class ReservationsController < ApplicationController
         @reservation = Reservation.find(params[:id])
         @fundraiser = @reservation.fundraiser
         @household = @reservation.household
+    end 
+
+    def destroy 
+        @reservation = Reservation.find(params[:id])
+        @reservation.destroy
+
+        redirect_to user_path(current_user)
     end 
 
     private 

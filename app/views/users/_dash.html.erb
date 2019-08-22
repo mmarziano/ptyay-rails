@@ -43,7 +43,7 @@
                             </tr>
                             <% end %>
                     </table>
-                    <%= link_to 'Add Student', new_household_student_path(@user.household), :class => "btn btn-primary", :style => "float: left" %>
+                        <%= link_to 'Add Student', new_household_student_path(@user.household), :class => "btn btn-primary", :style => "float: left" %>
             </div>
         </div>
     </div>  
@@ -76,7 +76,9 @@
                             </tr>
                             <% end %>
                     </table>
-                    <%= link_to 'Add Fundraiser', new_fundraiser_path, :class => "btn btn-primary", :style => "float: left" %>
+                    <% if @user.admin? %>
+                         <%= link_to 'Add Fundraiser', new_fundraiser_path, :class => "btn btn-primary", :style => "float: left" %>
+                    <% end %>
             </div>
         </div>   
     </div>                         

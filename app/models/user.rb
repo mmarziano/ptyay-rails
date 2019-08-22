@@ -21,5 +21,13 @@ class User < ApplicationRecord
         self.first_name.capitalize + " " + self.last_name.capitalize
     end 
 
+    def rsvpd?
+      !self.household.reservations.nil?
+    end 
+
+    def admin?
+      self.admin == true
+    end 
+
 
 end
