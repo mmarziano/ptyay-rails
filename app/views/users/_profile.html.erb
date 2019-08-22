@@ -1,12 +1,14 @@
+<div class="profile-card-blue">
+      <h1><%=current_user.full_name %></h1>
+  </div>
 
-    <div class="profile-card text-center">
-        <%= image_tag(@user.profile_img)%>
+    <div class="profile-card data-box text-center">
+        <h1>My Fundraisers</h1>
+        <div class="line"></div>
+     
     </div>
 
-    <div class="profile-card-blue">
-        <h1><%=current_user.full_name %></h1>
-        
-    </div>
+  
 
     <div class="profile-card-red">
         <p><%= link_to "Logout", '/logout', class: "btn btn-outline-light" %></p>

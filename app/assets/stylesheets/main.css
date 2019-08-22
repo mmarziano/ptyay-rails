@@ -306,6 +306,10 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
     margin: 5px;
     border: transparent;
 }
+.data-box {
+    height: 500px;
+    padding: 10px;
+}
 
 /* STICKY BOTTOM */
 
