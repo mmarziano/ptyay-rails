@@ -1,6 +1,8 @@
+require_dependency "student" 
+
 class Reservation < ApplicationRecord
-    serialize :attendees
+    serialize :attendees, Array
     
     belongs_to :fundraiser
-    belongs_to :user
+    belongs_to :household
 end

@@ -1,1 +1,31 @@
-<h1>Confirmed!</h1>
+<div class="clear"></div>
+
+<div class="header-frame">
+    <h1>Confirmed!</h1>
+</div>
+
+<div class="frame">
+    <h3 style="color: rgb(0, 141, 184)"><%=@fundraiser.title%></h3>
+    <div class="line"></div>
+    <h5>Location: <%= @fundraiser.location %></h5>
+    <h5>Event Date: <%= @fundraiser.date %></h5>
+    <h5>Event Time: <%= @fundraiser.time.strftime("%I:%M %p") %></h5>
+    <h5>Event Duration: <%= @fundraiser.duration %> minutes</h5>
+    <h5>Event Price: $<%= @fundraiser.price %></h5>
+
+    <table class="table table-striped">
+    <tr>
+        <th><h3>Attendees</h3</th>
+        <th><h3>Grade</h3></th>
+    </tr>
+        <% @household.reservations.each do |r| %>
+            <% r.attendees.each do |a| %>
+                <tr>
+                    <td><%= a.full_name %></td>
+                    <td><%= a.grade %></td>
+                </tr>
+            <% end %>
+        <% end %>
+    </table>
+    <%= link_to "Cancel Reservation", reservation_path(@reservation), method: :delete, class: "btn btn-danger", style: "float: right"%>
+</div>

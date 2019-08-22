@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2019_08_22_123236) do
 
   create_table "reservations", force: :cascade do |t|
     t.integer "fundraiser_id"
-    t.integer "user_id"
+    t.integer "household_id"
     t.integer "number_attending"
     t.text "attendees"
     t.datetime "created_at", null: false

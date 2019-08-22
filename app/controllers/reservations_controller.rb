@@ -9,7 +9,9 @@ class ReservationsController < ApplicationController
     end 
 
     def create
-        @reservation = Reservation.new(fundraiser_id: params[:reservation][:fundraiser_id], user_id: current_user.id, number_attending: params[:reservation][:number_attending])
+        @reservation = Reservation.new(fundraiser_id: params[:reservation][:fundraiser_id], household_id: current_user.household_id, number_attending: params[:reservation][:number_attending])
+        @fundraiser = Fundraiser.find(params[:reservation][:fundraiser_id])
+        @household = current_user.household
         params[:reservation][:id].reject!{|id| id == ""}
         @student = Student.find(params[:reservation][:id])
         @reservation.attendees = @student
@@ -19,6 +21,12 @@ class ReservationsController < ApplicationController
             @reservation.errors.full_messages.inspect
             render :new
         end
+    end 
+
+    def show 
+        @reservation = Reservation.find(params[:id])
+        @fundraiser = @reservation.fundraiser
+        @household = @reservation.household
     end 
 
     private 
