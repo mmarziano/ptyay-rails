@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root :to => 'sessions#index'
@@ -12,7 +13,10 @@ Rails.application.routes.draw do
   post '/profile' => "users#update"
   
   resources :users
-  resources :fundraisers
+  resources :fundraisers do
+    resources :reservations, only: :new
+  end 
+  
   resources :schools
   resources :households do 
     resources :students, only: :new

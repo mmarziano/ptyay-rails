@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_20_224103) do
+ActiveRecord::Schema.define(version: 2019_08_22_123236) do
 
   create_table "classrooms", force: :cascade do |t|
     t.string "teacher"
@@ -30,18 +30,29 @@ ActiveRecord::Schema.define(version: 2019_08_20_224103) do
   create_table "fundraisers", force: :cascade do |t|
     t.integer "school_id"
     t.string "title"
+    t.string "artwork"
+    t.string "description"
     t.decimal "amt_raised", precision: 16, scale: 2
     t.string "status"
     t.integer "goal"
     t.date "date"
     t.string "school_year"
-    t.string "notes"
+    t.string "admin_notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "households", force: :cascade do |t|
     t.integer "school_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer "fundraiser_id"
+    t.integer "user_id"
+    t.integer "number_attending"
+    t.boolean "will_attend", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
