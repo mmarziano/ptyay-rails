@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2019_08_22_123236) do
     t.integer "school_id"
     t.string "title"
     t.string "artwork"
-    t.string "description"
+    t.text "description"
     t.decimal "amt_raised", precision: 16, scale: 2
     t.string "status"
     t.integer "goal"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2019_08_22_123236) do
     t.date "date"
     t.integer "duration"
     t.string "location"
+    t.text "notice"
     t.string "school_year"
     t.string "admin_notes"
     t.datetime "created_at", null: false
@@ -56,7 +57,7 @@ ActiveRecord::Schema.define(version: 2019_08_22_123236) do
     t.integer "fundraiser_id"
     t.integer "user_id"
     t.integer "number_attending"
-    t.boolean "will_attend", default: true
+    t.text "attendees"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

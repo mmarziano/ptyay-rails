@@ -4,7 +4,7 @@ class CreateReservations < ActiveRecord::Migration[5.2]
       t.integer :fundraiser_id
       t.integer :user_id 
       t.integer :number_attending
-      t.boolean :will_attend, default: true
+      t.text :attendees
       t.timestamps
     end
   end

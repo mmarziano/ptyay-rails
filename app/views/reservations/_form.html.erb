@@ -35,7 +35,14 @@
 <%= form_for @reservation do |f| %>
 <%= f.label :number_attending %>
 <%= f.text_field :number_attending, class: "form-control", :required => true %></br>
-
+<%= f.label :attendees %></br>
+<%= f.collection_check_boxes :id, @household.users, :id, :full_name, { include_hidden: false } %>
+<%= f.collection_check_boxes :id, @household.students, :id, :full_name, { include_hidden: false } do |b| %>
+    <div class="checkbox">
+      <%= b.check_box %>
+      <%= b.label %>
+    </div>
+    <% end %>
 <%= f.submit class: "btn btn-outline-light"  %>
 
 
