@@ -31,6 +31,9 @@ gem 'jbuilder', '~> 2.5'
  gem 'axlsx_rails'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
+gem 'omniauth'
+gem 'dotenv-rails'
+gem 'omniauth-google-oauth2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
