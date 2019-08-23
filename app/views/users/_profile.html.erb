@@ -1,15 +1,20 @@
 <div class="profile-card-blue">
-      <h1><%=current_user.full_name %></h1>
+      <h1><%=link_to "Dashboard", user_path(current_user) %></h1>
   </div>
 
     <div class="profile-card data-box text-center">
-        <h1>Count Me In!</h1>
+        <h1>I'm Going!</h1>
         <div class="line"></div>
         <% if current_user.count_me_in? %>
             <%= render partial: "users/reservations" %>
         <% end %>
     </div>
 
+    <% if current_user.admin? %>
+        <div class="profile-card-green">
+            <p><%= link_to "Fundraisers", fundraisers_path, class: "btn btn-outline-light" %></p>
+        </div>
+    <% end %>
   
 
     <div class="profile-card-red">

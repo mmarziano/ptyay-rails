@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
             if @user && @user.authenticate(params[:password])&& @user.school_id != nil
                 log_in(@user)
                 redirect_to user_path(@user)
-            elsif @user && @user.valid_password?(params[:password])
+            elsif @user && @user.authenticate(params[:password])
                 redirect_to signup_path(@user)
             else 
                 redirect_to new_user_path

@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
     layout "main"
    
-    
+    ADMIN_PIN = "1234"
+
     def index
     end 
 
@@ -14,9 +15,9 @@ class UsersController < ApplicationController
             flash[:message] = "Account found. Please login in."
             redirect_to '/'
         else
-            @user = User.create(user_params)
+            @user = User.new(user_params)
+            @user.admin = true if params[:user][:admin_pin] == ADMIN_PIN
             @household = @user.build_household(school_id: params[:user][:school_id])
-        end
                 if @user.save 
                     log_in(@user)
                     render :show
@@ -24,6 +25,7 @@ class UsersController < ApplicationController
                     @user.errors.full_messages.inspect
                     render :new
                 end  
+            end
     end 
 
     def show 
@@ -50,7 +52,7 @@ class UsersController < ApplicationController
 private 
 
     def user_params
-        params.require(:user).permit(:username, :email, :password, :first_name, :last_name, :school_id, :household_id, :profile_img, :household => [:students_attributes => [:first_name, :last_name, :grade]])
+        params.require(:user).permit(:username, :email, :password, :first_name, :last_name, :school_id, :household_id, :admin_pin, :household => [:students_attributes => [:first_name, :last_name, :grade]])
     end 
 
     def require_login

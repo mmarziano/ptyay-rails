@@ -5,8 +5,8 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :password_digest
       t.string :first_name
       t.string :last_name
-      t.string :profile_img, :default => "/assets/avatar.jpg"
       t.boolean :admin, :default => false
+      t.integer :admin_pin
       t.integer :school_id
       t.integer :household_id
 

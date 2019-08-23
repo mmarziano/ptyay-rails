@@ -63,16 +63,16 @@
                             <th></th>
                             <th><h3>Fundraiser/Event</h3></th>
                             <th><h3>Event Date</h3></th>
-                            <th><h3>Goal</h3></th>
-                            <th><h3>Status</h3></th>
+                            <th><h3>Price</h3></th>
+                            <th><h3>Location</h3></th>
                         </tr>
                             <% @user.school.fundraisers.each do |fundraiser| %>
                             <tr>
-                                <td><%= link_to 'View Details/RSVP!', new_fundraiser_reservation_path(fundraiser), class: "btn btn-primary" %></td>
+                                <td><%= link_to 'View Details/RSVP!', new_fundraiser_reservation_path(fundraiser), class: "btn btn-link" %></td>
                                 <td><%= fundraiser.title %></td>
-                                <td><%= fundraiser.date %></td>
-                                <td><%= fundraiser.goal %></td>
-                                <td><%= fundraiser.status %></td>
+                                <td><%= fundraiser.date.strftime("%m/%d/%Y") %></td>
+                                <td>$<%= fundraiser.price %></td>
+                                <td><%= fundraiser.location %></td>
                             </tr>
                             <% end %>
                     </table>

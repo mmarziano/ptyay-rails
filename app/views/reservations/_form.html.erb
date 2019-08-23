@@ -12,8 +12,7 @@
 
 <h2 style="color: rgb(0, 141, 184)"><%= @fundraiser.title %></h2>
 <div class="line"></div>
-<p><%= @fundraiser.description %></p>
-
+    <p><%= @fundraiser.description %></p>
         <table class="table table-striped text-center">
             <tr>
                 <th><h3>Location</h3></th>
@@ -26,9 +25,11 @@
                 <td><%= @fundraiser.time.strftime("%I:%M %p") %></td>
                 <td><%= @fundraiser.duration %> minutes</td>
                 <td>$<%= @fundraiser.price %></td>
-            </tr>
+            </tr>    
         </table>
-
+        <p style="color:orange"><%= @fundraiser.notice %></p>
+        <div class="line"></div>
+       
 
 <h2>RSVP!</h2>
 <div class="line"></div>

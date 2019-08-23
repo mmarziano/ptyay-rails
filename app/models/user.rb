@@ -28,7 +28,7 @@ class User < ApplicationRecord
     end 
 
     def count_me_in?
-      !self.household.reservations.nil?
+      !self.household.reservations.empty?
     end 
 
     def admin?

@@ -6,7 +6,10 @@ module FundraisersHelper
           '2020-2021',
           '2021-2022',
           '2022-2023',
-          
         ]
+    end 
+
+    def require_admin
+      current_user.admin == true
     end 
 end

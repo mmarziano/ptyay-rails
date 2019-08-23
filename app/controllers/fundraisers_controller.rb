@@ -1,6 +1,11 @@
 class FundraisersController < ApplicationController
     layout "main"
 
+    before_action :require_admin, only: [:new, :create, :edit, :update, :destroy]
+
+    def index
+        @fundraisers = Fundraiser.all
+    end 
 
     def new
         @fundraiser = Fundraiser.new
@@ -42,6 +47,6 @@ class FundraisersController < ApplicationController
     
     private 
         def fundraiser_params
-            params.require(:fundraiser).permit(:title, :goal, :date, :description, :price, :time, :duration, :location)
+            params.require(:fundraiser).permit(:title, :goal, :date, :description, :price, :time, :duration, :location, :notice, :school_year, :admin_notes)
         end 
 end
