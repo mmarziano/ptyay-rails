@@ -5,6 +5,10 @@ class FundraisersController < ApplicationController
 
     def index
         @fundraisers = Fundraiser.all
+        respond_to do |format|
+            format.html
+            format.xlsx
+        end
     end 
 
     def new

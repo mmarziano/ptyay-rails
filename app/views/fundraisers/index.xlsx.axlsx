@@ -1,0 +1,10 @@
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: "Attendees") do |sheet|
+    @fundraisers.each do |f|
+        sheet.add_row [f.title]
+        Reservation.attendees_list(f).each do |a| 
+            sheet.add_row [a.full_name, a.grade]
+        end 
+    end
+end

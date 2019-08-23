@@ -5,7 +5,9 @@
 
     <div class="clear"></div>
 
+    
     <div class="frame-full">
+    <%= link_to 'Download as .xlsx', fundraisers_path(format: :xlsx), class: "btn btn-success", style: "float:right" %>
         <%= render partial: 'list'%>
     </div>
 <% else %>
