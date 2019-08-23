@@ -1,0 +1,41 @@
+<% if @fundraiser.errors.any? %>
+<div id="error_explanation">
+    <h2><%= pluralize(@fundraiser.errors.count, "error") %> prohibited this account from being created:</h2>
+
+    <ul>
+        <% @fundraiser.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+</div>
+<% end %>
+
+<%= form_for @fundraiser do |f| %>
+    <%= f.label :school_year %>
+    <%= f.collection_select :school_year, school_year, :to_str, :to_str, {}, {class: "form-control", :required => true}  %></br>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control", required: true %></br>
+    <%= f.label :description %>
+    <%= f.text_field :description, class: "form-control", required: true %></br>
+    <%= f.label :date %>
+    <%= f.date_field :date, class: "form-control", required: true %></br>
+    <%= f.label :time %>
+    <%= f.time_field :time, class: "form-control", required: true %></br>
+    <%= f.label :duration_in_minutes %>
+    <%= f.text_field :duration, class: "form-control", required: true %></br>
+    <%= f.label :location %>
+    <%= f.text_field :location, class: "form-control", required: true %></br>
+    <%= f.label :price %>
+    <%= f.text_field :price, class: "form-control", required: true %></br>
+    <%= f.label :goal %>
+    <%= f.text_field :goal, class: "form-control", required: true %></br>
+    <%= f.label :notice %>
+    <%= f.text_area :notice, class: "form-control" %></br>
+    <%= f.check_box :status %>
+    <%= f.label :completed?, class: "checkboxes"%></br>
+    
+    <br>
+    
+<%= f.submit class: "btn btn-outline-light" %>
+<% end %>
+

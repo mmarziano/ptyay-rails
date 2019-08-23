@@ -11,6 +11,7 @@
 <% end %>
 
 <h2 style="color: rgb(0, 141, 184)"><%= @fundraiser.title %></h2>
+<h2 style="color: orange"><%= completed?(@fundraiser)%></h2>
 <div class="line"></div>
     <p><%= @fundraiser.description %></p>
         <table class="table table-striped text-center">
@@ -31,21 +32,35 @@
         <div class="line"></div>
        
 
-<h2>RSVP!</h2>
-<div class="line"></div>
-<%= form_for @reservation do |f| %>
-<%= f.hidden_field :fundraiser_id, :value => @fundraiser.id %>    
-<%= f.label :number_attending %>
-<%= f.text_field :number_attending, class: "form-control", :required => true %></br>
-<%= f.label :attendees %></br>
-    <%= f.collection_check_boxes :id, @household.students, :id, :full_name, :item_wrapper_class => 'form-check' do |b| %>
-       <div class="checkbox">
-        <%= b.check_box %>
-        <%= b.label %>
-       </div>
+    <h2>RSVP!</h2>
+    <div class="line"></div>
+    <% if @fundraiser.status == "Pending" %>
+        <%= form_for @reservation do |f| %>
+        <%= f.hidden_field :fundraiser_id, :value => @fundraiser.id %>    
+        <%= f.label :number_attending %>
+        <%= f.text_field :number_attending, class: "form-control", :required => true %></br>
+        <%= f.label :attendees %></br>
+            <%= f.collection_check_boxes :id, @household.students, :id, :full_name, :item_wrapper_class => 'form-check' do |b| %>
+            <div class="checkbox">
+                <%= b.check_box %>
+                <%= b.label class: "checkboxes" %>
+            </div>
+                <% end %>
+        </br>
+        <%= f.submit class: "btn btn-outline-light"  %>
         <% end %>
-
-<%= f.submit class: "btn btn-outline-light"  %>
-
-
+    <% else %>
+        <%= form_for @reservation do |f| %>
+            <%= f.hidden_field :fundraiser_id, :value => @fundraiser.id %>    
+            <%= f.label :number_attending %>
+            <%= f.text_field :number_attending, class: "form-control", :required => true, disabled: true%></br>
+            <%= f.label :attendees %></br>
+                <%= f.collection_check_boxes :id, @household.students, :id, :full_name, :item_wrapper_class => 'form-check' do |b| %>
+                <div class="checkbox">
+                    <%= b.check_box disabled: true%>
+                    <%= b.label class: "checkboxes" %>
+                </div>
+                    <% end %>
+            </br>
+    <% end %>
 <% end %>

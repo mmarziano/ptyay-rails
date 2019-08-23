@@ -41,7 +41,12 @@ class FundraisersController < ApplicationController
         @fundraiser = Fundraiser.find(params[:id])
         if @fundraiser
             @fundraiser.update(fundraiser_params)
-
+                if params[:fundraiser][:status] == "1"
+                    @fundraiser.status = "Completed"
+                else 
+                    @fundraiser.status = "Pending"
+                end
+            @fundraiser.save
             redirect_to user_path(current_user)
         else 
             @fundraiser.errors.full_messages.inspect 
@@ -60,6 +65,6 @@ class FundraisersController < ApplicationController
     
     private 
         def fundraiser_params
-            params.require(:fundraiser).permit(:title, :goal, :date, :description, :price, :time, :duration, :location, :notice, :school_year, :admin_notes)
+            params.require(:fundraiser).permit(:title, :goal, :date, :description, :price, :time, :duration, :location, :notice, :school_year, :admin_notes, :status)
         end 
 end

@@ -12,4 +12,10 @@ module FundraisersHelper
     def require_admin
       current_user.admin == true
     end 
+
+    def completed?(fundraiser)
+      if fundraiser.status == "Completed"
+        "Completed!"
+      end
+    end 
 end
