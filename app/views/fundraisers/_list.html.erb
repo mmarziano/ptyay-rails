@@ -1,6 +1,8 @@
 
 <% @fundraisers.each do |f| %>
     <h2 style="color: rgb(0, 141, 184)"><%= f.title %></h2>
+    <h4>Price per attendee: $<%=f.price%></h4>
+    <h4>Status: <%= f.status %></h4>
     <div class="line"></div>
     <h3>Number of Attendees: <%= Reservation.num_attendees(f) %></h3>
     <table class="table table-striped text-center">

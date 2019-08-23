@@ -35,5 +35,10 @@ class User < ApplicationRecord
       self.admin == true
     end 
 
+    def my_reservation(fundraiser)
+      self.household.reservations.detect do |r|
+        r.fundraiser_id == fundraiser.id
+      end
+    end 
 
 end

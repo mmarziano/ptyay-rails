@@ -68,7 +68,11 @@
                         </tr>
                             <% @user.school.fundraisers.each do |fundraiser| %>
                             <tr>
-                                <td><%= link_to 'View Details/RSVP!', new_fundraiser_reservation_path(fundraiser), class: "btn btn-link" %></td>
+                            <% if !current_user.rsvpd(fundraiser).empty? %>
+                                <td><%= link_to "Already RSVP'd! View Details", reservation_path(current_user.my_reservation(fundraiser)), class: "btn btn-link", style: "color: green" %></td>
+                            <% else %>
+                                <td><%= link_to "View Details/RSVP!", new_fundraiser_reservation_path(fundraiser), class: "btn btn-link" %></td>
+                            <% end %>
                                 <td><%= fundraiser.title %></td>
                                 <td><%= fundraiser.date.strftime("%m/%d/%Y") %></td>
                                 <td>$<%= fundraiser.price %></td>
