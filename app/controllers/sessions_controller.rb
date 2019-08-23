@@ -33,7 +33,7 @@ class SessionsController < ApplicationController
         @user.save
         session[:user_id] = @user.id
         if @user.household_id == nil
-            render 'users/complete_profile'
+            render '/users/complete_profile', layout: "main"
         else 
             redirect_to user_path(@user)
         end 
