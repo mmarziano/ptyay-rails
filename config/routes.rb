@@ -24,6 +24,6 @@ Rails.application.routes.draw do
   resources :students
   resources :comments
 
-
+  get '/auth/:provider/callback' => 'sessions#omniauth'
 
 end
