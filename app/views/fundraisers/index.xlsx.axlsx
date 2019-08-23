@@ -1,9 +1,16 @@
 wb = xlsx_package.workbook
 
+title = wb.styles.add_style(:fg_color => "F008db8",
+                            :sz=>14,
+                           :border=>Axlsx::STYLE_THIN_BORDER,
+                           :alignment=>{:horizontal => :center})
+bold = wb.styles.add_style(:b => true)
+
 wb.add_worksheet(name: "Attendees") do |sheet|
     @fundraisers.each do |f|
-        sheet.add_row [f.title]
-        Reservation.attendees_list(f).each do |a| 
+        sheet.add_row [f.title], :style=>title
+        sheet.add_row ["Student Name", "Student Grade"], :style => bold
+        Reservation.attendees_list(f).each do |a|
             sheet.add_row [a.full_name, a.grade]
         end 
     end

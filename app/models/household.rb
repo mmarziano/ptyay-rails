@@ -5,4 +5,7 @@ class Household < ApplicationRecord
     has_many :reservations
 
     accepts_nested_attributes_for :students, reject_if: :all_blank
+
+  
+
 end
