@@ -29,6 +29,7 @@
         </div>
         <div class="col-md-6 col-sm-6">
             <div class="frame text-center">
+                <div class="table-responsive">
                     <table class="table table-striped">
                         <tr>
                             <th><h3>Student Name</h3></th>
@@ -44,7 +45,8 @@
                             <% end %>
                     </table>
                         <%= link_to 'Add Student', new_household_student_path(@user.household), :class => "btn btn-primary", :style => "float: left" %>
-            </div>
+                </div>
+             </div>
         </div>
     </div>  
     
@@ -58,6 +60,7 @@
     </div>                     
     <div class="col-md-12 col-sm-12">
             <div class="frame-full text-center">
+                <div class="table-responsive">                
                     <table class="table table-striped">
                         <tr>
                             <th></th>
@@ -65,6 +68,7 @@
                             <th><h3>Event Date</h3></th>
                             <th><h3>Price</h3></th>
                             <th><h3>Location</h3></th>
+                            <th></th>
                         </tr>
                             <% @user.school.fundraisers.each do |fundraiser| %>
                             <tr>
@@ -77,12 +81,16 @@
                                 <td><%= fundraiser.date.strftime("%m/%d/%Y") %></td>
                                 <td>$<%= fundraiser.price %></td>
                                 <td><%= fundraiser.location %></td>
+                                <% if @user.admin? %>
+                                     <td><%= link_to raw("&#9998;"), edit_fundraiser_path(fundraiser) %><%= link_to raw("&#10006;"), fundraiser_path(fundraiser), method: :delete, style: "color: red" %></td>
+                                <% end %>
                             </tr>
                             <% end %>
                     </table>
                     <% if @user.admin? %>
                          <%= link_to 'Add Fundraiser', new_fundraiser_path, :class => "btn btn-primary", :style => "float: left" %>
                     <% end %>
-            </div>
+                </div>
+             </div>
         </div>   
     </div>                         
