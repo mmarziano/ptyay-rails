@@ -18,4 +18,13 @@ class Reservation < ApplicationRecord
         attendees_count
     end 
 
+    def self.attendees_list(fundraiser)
+        @attendees = []
+        fundraiser.reservations.each do |r|
+                r.attendees.each do |s|
+                    @attendees << s 
+                end 
+            end 
+        @attendees
+    end 
 end

@@ -8,9 +8,11 @@
                 <th><h3>Attendee Name</h3></th>
                 <th><h3>Grade</h3></th>
             </tr>
-            <tr>
-                <td><%= f.location %></td>
-                <td><%= f.time.strftime("%I:%M %p") %></td>
-            </tr>    
+            <% Reservation.attendees_list(f).each do |a| %>
+                <tr>
+                        <td><%= a.full_name %></td>
+                        <td><%= a.grade %></td>
+                </tr>
+            <% end %>  
         </table>
 <% end %>
