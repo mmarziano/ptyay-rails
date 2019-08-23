@@ -1,0 +1,23 @@
+<div class="clear"></div>
+
+<h1 style="text-align:center">Complete Profile</h1>
+
+<div class="clear"></div>
+
+<div class="frame-full">
+    <%= form_for @user, :url => { :controller => "users", :action => "complete_profile" } do |f| %>
+        <%= f.hidden_field :user_id, :value => @user.id %>
+        <%= f.label :admin_pin %>
+        <%= f.text_field :admin_pin, class: "form-control" %></br>
+
+        <h3>Select School</h3>
+
+        <%= f.label :school_name %>
+        <%= f.collection_select :school_id, School.all, :id, :name, {}, {class: "form-control", :required => true} %></br>
+
+        <%= f.submit "Complete Profile", class: "btn btn-outline-light"  %>
+
+    <% end %>
+</div>
+
+    

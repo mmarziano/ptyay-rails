@@ -32,7 +32,11 @@ class SessionsController < ApplicationController
         @user = User.from_omniauth(auth)
         @user.save
         session[:user_id] = @user.id
-        redirect_to home_path
+        if @user.household_id == nil
+            render 'users/complete_profile'
+        else 
+            redirect_to user_path(@user)
+        end 
     end
 
     private

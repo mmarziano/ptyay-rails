@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   get '/logout' => "sessions#destroy"
   get '/signup' => "users#new"
   post '/signup' => "users#create"
-  post '/profile' => "users#update"
+  post '/profile' => "users#complete_update"
+  patch '/complete_profile' => "users#complete_profile"
+  
   
   resources :users
   resources :fundraisers do
@@ -24,6 +26,6 @@ Rails.application.routes.draw do
   resources :students
   resources :comments
 
-  get '/auth/:provider/callback' => 'sessions#omniauth'
+  get '/auth/google_oauth2/callback' => 'sessions#omniauth'
 
 end

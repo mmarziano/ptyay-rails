@@ -28,6 +28,20 @@ class UsersController < ApplicationController
             end
     end 
 
+    def complete_profile
+        @user = User.find(params[:user][:user_id]) 
+        @user.admin = true if params[:user][:admin_pin] == ADMIN_PIN
+        @user.school_id = params[:user][:school_id]
+        @household = @user.build_household(school_id: params[:user][:school_id])
+                if @user.save 
+                    log_in(@user)
+                    render :show
+                else 
+                    @user.errors.full_messages.inspect
+                    render :new
+                end  
+     end 
+
     def show 
         @user = User.find(params[:id])
         @household = @user.household
