@@ -44,6 +44,15 @@ class FundraisersController < ApplicationController
             render :new 
         end 
     end 
+
+    def destroy 
+        @fundraiser = Fundraiser.find(params[:id])
+        @fundraiser.reservations.clear
+        @fundraiser.destroy
+
+        redirect_to user_path(current_user)
+
+    end 
     
     private 
         def fundraiser_params
