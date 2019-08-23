@@ -56,7 +56,9 @@ class FundraisersController < ApplicationController
 
     def destroy 
         @fundraiser = Fundraiser.find(params[:id])
-        @fundraiser.reservations.clear
+            @fundraiser.reservations.each do |r|
+                r.destroy
+            end 
         @fundraiser.destroy
 
         redirect_to user_path(current_user)

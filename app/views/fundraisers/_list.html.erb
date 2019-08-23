@@ -4,7 +4,8 @@
     <h4>Price per attendee: $<%=f.price%></h4>
     <h4>Status: <%= f.status %></h4>
     <div class="line"></div>
-    <h3>Number of Attendees: <%= Reservation.num_attendees(f) %></h3>
+    <h3>Number of Attendees: <%= Reservation.total_attendees(f) %></h3>
+    <h3>Students Attending: <%= Reservation.student_attendees(f) %></h3>
     <table class="table table-striped text-center">
             <tr>
                 <th><h3>Attendee Name</h3></th>

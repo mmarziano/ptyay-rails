@@ -9,11 +9,21 @@ class Reservation < ApplicationRecord
     belongs_to :fundraiser
     belongs_to :household
 
-    def self.num_attendees(fundraiser)
+    def self.student_attendees(fundraiser)
         attendees_count = 0
         self.all.select do |r|
             if r.fundraiser_id == fundraiser.id
               attendees_count += r.attendees.count
+            end
+        end
+        attendees_count
+    end 
+
+    def self.total_attendees(fundraiser)
+        attendees_count = 0
+        self.all.select do |r|
+            if r.fundraiser_id == fundraiser.id
+              attendees_count += r.number_attending
             end
         end
         attendees_count

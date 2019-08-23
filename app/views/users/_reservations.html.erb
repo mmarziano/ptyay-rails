@@ -1,4 +1,6 @@
 
-    <% current_user.household.reservations.each do |r| %>
-        <h4><%=link_to r.fundraiser.title, fundraiser_path(r.fundraiser)%></h4>
+   <% if !current_user.household.reservations.empty? %>
+        <% current_user.household.reservations.each do |r| %>
+            <h4><%=link_to r.fundraiser.title, fundraiser_path(r.fundraiser)%></h4>
+        <% end %>
     <% end %>
