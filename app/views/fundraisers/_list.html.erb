@@ -1,0 +1,16 @@
+
+<% @fundraisers.each do |f| %>
+    <h2 style="color: rgb(0, 141, 184)"><%= f.title %></h2>
+    <div class="line"></div>
+    <h3>Number of Attendees: <%= Reservation.num_attendees(f) %></h3>
+    <table class="table table-striped text-center">
+            <tr>
+                <th><h3>Attendee Name</h3></th>
+                <th><h3>Grade</h3></th>
+            </tr>
+            <tr>
+                <td><%= f.location %></td>
+                <td><%= f.time.strftime("%I:%M %p") %></td>
+            </tr>    
+        </table>
+<% end %>

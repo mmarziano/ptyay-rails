@@ -1,3 +1,16 @@
-<% @fundraisers.all.each do |f| %>
-    <p><%= f.title %></p>
+ <% if current_user.admin? %>
+    <div class="clear"></div>
+
+    <h1 style="text-align:center">Fundraisers/Events</h1>
+
+    <div class="clear"></div>
+
+    <div class="frame-full">
+        <%= render partial: 'list'%>
+    </div>
+<% else %>
+    <div class="clear"></div>
+
+    <h1 style="text-align:center">Restricted</h1>
+
 <% end %>
