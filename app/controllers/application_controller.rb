@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
     include StudentsHelper
     include UsersHelper
     include FundraisersHelper
+    include CommentsHelper
     
     def index 
        

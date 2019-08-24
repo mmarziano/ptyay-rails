@@ -6,16 +6,7 @@
         <div class="header-frame text-center">
             <h1><%=@user.first_name%>'s School</h1>
         </div>
-    </div>
-    <div class="col-md-6 col-sm-6">
-        <div class="header-frame text-center">
-            <h1><%=@user.first_name%>'s Household</h1>
-        </div>
-    </div>
-</div>
-    <div class="row clearfix">
-        <div class="col-md-6 col-sm-6">
-            <div class="frame">
+        <div class="frame">
                 <h1>My School</h1>
                 <div class="line"></div>
                     <h3><%=@user.school.name%></h3></br>
@@ -26,9 +17,12 @@
                     <%= link_to "Edit Profile", edit_user_path(current_user), :class => "btn btn-primary", :style => "float: right"%>
 
             </div>
+    </div>
+    <div class="col-md-6 col-sm-6">
+        <div class="header-frame text-center">
+            <h1><%=@user.first_name%>'s Household</h1>
         </div>
-        <div class="col-md-6 col-sm-6">
-            <div class="frame text-center">
+        <div class="frame text-center">
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <tr>
@@ -47,8 +41,8 @@
                         <%= link_to 'Add Student', new_household_student_path(@user.household), :class => "btn btn-primary", :style => "float: left" %>
                 </div>
              </div>
-        </div>
-    </div>  
+    </div>
+</div>
     
 <div class="clear"></div>
 
@@ -77,7 +71,7 @@
                             <% else %>
                                 <td><%= link_to "View Details/RSVP!", new_fundraiser_reservation_path(fundraiser), class: "btn btn-link" %></td>
                             <% end %>
-                                <td><%= fundraiser.title %></td>
+                                <td><%= link_to fundraiser.title, fundraiser_path(fundraiser) %></td>
                                 <td><%= fundraiser.date.strftime("%m/%d/%Y") %></td>
                                 <td>$<%= fundraiser.price %></td>
                                 <td><%= fundraiser.location %></td>
