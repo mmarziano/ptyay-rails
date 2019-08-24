@@ -1,6 +1,6 @@
 
 <% @fundraisers.each do |f| %>
-    <h2 style="color: rgb(0, 141, 184)"><%= f.title %></h2>
+    <h2 style="color: rgb(0, 141, 184)"><%= link_to f.title, fundraiser_path(f) %></h2>
     <h4>Price per attendee: $<%=f.price%></h4>
     <h4>Status: <%= f.status %></h4>
     <div class="line"></div>

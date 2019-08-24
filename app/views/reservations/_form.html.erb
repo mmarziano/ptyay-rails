@@ -10,7 +10,7 @@
 </div>
 <% end %>
 
-<h2 style="color: rgb(0, 141, 184)"><%= @fundraiser.title %></h2>
+<h2 style="color: rgb(0, 141, 184)"><%= link_to @fundraiser.title, fundraiser_path(@fundraiser) %></h2>
 <h2 style="color: orange"><%= completed?(@fundraiser)%></h2>
 <div class="line"></div>
     <p><%= @fundraiser.description %></p>

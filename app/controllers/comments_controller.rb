@@ -20,6 +20,15 @@ class CommentsController < ApplicationController
 
     def update
         @comment = Comment.find(params[:id])
+        if @comment.user == current_user 
+            @comment.text = params[:comment]
+            @comment.save
+
+            redirect_to fundraiser_path(@comment.fundraiser)
+        else 
+            flash[:alert] = "Cannot edit another user's comments."
+            redirect_to fundraiser_path(@comment.fundraiser)
+        end 
     end 
 
     def destroy

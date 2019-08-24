@@ -18,8 +18,10 @@ Rails.application.routes.draw do
   resources :users
   resources :fundraisers do
     resources :reservations, only: :new
-    resources :comments, only: [:new, :create, :show]
+    resources :comments, only: [:new, :create, :edit, :update]
   end 
+
+  resources :comments
   resources :reservations
   resources :schools
   resources :households do 
