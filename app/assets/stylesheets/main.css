@@ -84,6 +84,12 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
     width: 100px;
     height: 100px;
 }
+/* COMMENTS STYLING */
+
+.comment {
+    width: 120px;
+    vertical-align: center;
+}
 
 /* LOGO STYLING */
 

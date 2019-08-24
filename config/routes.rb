@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :users
   resources :fundraisers do
     resources :reservations, only: :new
+    resources :comments, only: [:new, :show]
   end 
   resources :reservations
   resources :schools
@@ -24,7 +25,7 @@ Rails.application.routes.draw do
     resources :students, only: :new
   end 
   resources :students
-  resources :comments
+  
 
   get '/auth/google_oauth2/callback' => 'sessions#omniauth'
 
