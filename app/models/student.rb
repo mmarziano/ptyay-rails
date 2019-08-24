@@ -20,8 +20,12 @@ class Student < ApplicationRecord
         points
     end 
 
-    def participation_points_by_classroom(classroom)
-         
+    def participation_points_by_classroom
+        class_points = 0 
+        self.students.each do |s|
+            class_points += s.participations_points_by_student
+        end 
+        class_points
     end 
 end
 
