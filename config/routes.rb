@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     resources :students, only: :new
   end 
   resources :students
+  resources :classrooms, only: :index
   
 
   get '/auth/google_oauth2/callback' => 'sessions#omniauth'
