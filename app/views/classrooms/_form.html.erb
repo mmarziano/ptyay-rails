@@ -1,0 +1,9 @@
+<%= form_for @classroom do |f| %>
+    <%= f.collection_check_boxes :school_id, grades, :to_str, :to_str, :item_wrapper_class => 'form-check' do |b|  %></br>
+    <div class="checkbox">
+            <%= b.check_box %>
+            <%= b.label class: "checkboxes" %>
+        </div>
+    <% end %>
+<%= f.submit "Save", class: "btn btn-outline-light" %>
+<% end %>
