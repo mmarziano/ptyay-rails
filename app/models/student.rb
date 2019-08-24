@@ -9,16 +9,15 @@ class Student < ApplicationRecord
     end 
 
     def participation_points_by_student
-            school = self.school
-            school.fundraisers.each do |f|
-                f.reservations.each do |r|
-                    r.household.students.select do |s|
-                        s.id == self.id
-                    end 
-                @points = r.household.students.count 
-                end 
-            end  
-        @points    
+       points = 0
+       self.household.reservations.each do |r|
+            r.attendees.each do |s|
+              if s == self
+                points += 1 
+              end 
+            end 
+        end 
+        points
     end 
 
     def participation_points_by_classroom(classroom)
