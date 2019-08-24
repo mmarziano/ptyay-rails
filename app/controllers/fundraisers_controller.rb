@@ -59,6 +59,9 @@ class FundraisersController < ApplicationController
             @fundraiser.reservations.each do |r|
                 r.destroy
             end 
+            @fundraiser.comments.each do |c|
+                c.destroy
+            end 
         @fundraiser.destroy
 
         redirect_to user_path(current_user)

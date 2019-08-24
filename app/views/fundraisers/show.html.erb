@@ -31,7 +31,7 @@
             <h1>Comments</h1>
             <div class="line"></div>
             
-            <% @fundraiser.comments.each do |c| %>
+            <% @fundraiser.comments.reverse.each do |c| %>
                 <p><%=c.user.first_name%>: <%= c.text %> - <%=c.post_time %></p>
             <% end %>
             
