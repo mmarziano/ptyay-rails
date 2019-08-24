@@ -33,12 +33,14 @@
                         <tr>
                             <th><h3>Student Name</h3></th>
                             <th><h3>Grade</h3></th>
+                            <th><h3>Points</h3></th>
                             <th><h3>Action</h3></th>
                         </tr>
                             <% @user.household.students.each do |student| %>
                             <tr>
                                 <td><%= student.full_name %></td>
                                 <td><%= student.grade %></td>
+                                <td><%= student.participation_points_by_student %></td>
                                 <td><%= link_to "Edit", edit_student_path(student), :class => "btn btn-primary"%></td>
                             </tr>
                             <% end %>
@@ -81,7 +83,7 @@
                                 <td>$<%= fundraiser.price %></td>
                                 <td><%= fundraiser.location %></td>
                                 <% if @user.admin? %>
-                                     <td><%= link_to raw("&#9998;"), edit_fundraiser_path(fundraiser) %><%= link_to raw("&#10006;"), fundraiser_path(fundraiser), method: :delete, style: "color: red" %></td>
+                                     <td><%= link_to raw("&#9998;"), edit_fundraiser_path(fundraiser), style: "color: white; margin-right: 5px" %><%= link_to raw("&#10008;"), fundraiser_path(fundraiser), method: :delete %></td>
                                 <% end %>
                             </tr>
                             <% end %>

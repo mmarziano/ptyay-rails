@@ -7,7 +7,8 @@
      
         <% @classrooms.each do |c| %>
             <h1 style="color: rgb(0, 141, 184)"><%= c.name %></h1>
-            <table class="table table-striped table-sm">
+            <h3 style="color:orange">Total Points: <%=c.participation_points_by_classroom%></h3>
+            <table class="table table-striped table-sm text-center">
                 <tr>
                     <th><h3>Student Name</h3></th>
                     <th><h3>Participation Points</h3></th>
@@ -15,7 +16,7 @@
                 <tr>
                     <% c.students.each do |s| %>
                     <td style="color: orange"><%= s.full_name %></td>
-                    <td><%= s.grade %></td>
+                    <td style="color: orange"><%= s.participation_points_by_student %></td>
                 </tr>
                 <% end %>
             </table>
