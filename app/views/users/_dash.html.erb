@@ -7,10 +7,11 @@
             <h1><%=@user.first_name%>'s School</h1>
         </div>
         <div class="frame">
-        <% if @user.admin? && @user.school.classrooms.empty? %>
-            <%= link_to 'Initialize Classrooms', new_classroom_path, :class => "btn btn-outline-light btn-sm" %>
-        <% end %>
-        <%= link_to "View Class Rankings", classrooms_path, :class => "btn btn-success btn-sm", style: "float: right" %></br>
+            <% if @user.admin? && @user.school.classrooms.empty? %>
+                <%= link_to 'Initialize Classrooms', new_classroom_path, :class => "btn btn-outline-light btn-sm" %>
+            <% end %>
+             <%= link_to "View Class Rankings", classrooms_path, :class => "btn btn-success btn-sm", style: "float: right" %></br>
+             </br>
                 <div class="line"></div>
                 <h1>My School</h1>
                 <div class="line"></div>
