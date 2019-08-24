@@ -30,10 +30,13 @@
             <div class="line"></div>
             <h1>Comments</h1>
             <div class="line"></div>
+            
             <% @fundraiser.comments.each do |c| %>
-                <p><%= c.text %></p>
+                <p><%=c.user.first_name%>: <%= c.text %> - <%=c.post_time %></p>
             <% end %>
+            
             <div class="line"></div>
+            
             <%= render partial: '/comments/comment_field', locals: {fundraiser: @fundraiser} %>
         
     
