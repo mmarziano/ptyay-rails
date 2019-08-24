@@ -29,7 +29,12 @@
             <div class="clear"></div>
             <div class="line"></div>
             <h1>Comments</h1>
-            <%= render partial: '/comments/comment_field' %>
+            <div class="line"></div>
+            <% @fundraiser.comments.each do |c| %>
+                <p><%= c.text %></p>
+            <% end %>
+            <div class="line"></div>
+            <%= render partial: '/comments/comment_field', locals: {fundraiser: @fundraiser} %>
         
     
 

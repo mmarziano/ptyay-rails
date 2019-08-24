@@ -12,12 +12,13 @@ Rails.application.routes.draw do
   post '/signup' => "users#create"
   post '/profile' => "users#complete_update"
   patch '/complete_profile' => "users#complete_profile"
+  post '/fundraisers/:fundraiser_id/comments/new' => "comments#create"
   
   
   resources :users
   resources :fundraisers do
     resources :reservations, only: :new
-    resources :comments, only: [:new, :show]
+    resources :comments, only: [:new, :create, :show]
   end 
   resources :reservations
   resources :schools

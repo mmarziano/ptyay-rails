@@ -86,8 +86,7 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
 }
 /* COMMENTS STYLING */
 
-.comment {
-    width: 120px;
+.col-form-label {
     vertical-align: center;
 }
 

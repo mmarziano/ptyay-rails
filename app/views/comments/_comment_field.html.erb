@@ -1,7 +1,5 @@
-<div class="comment">
-    <%= form_tag new_fundraiser_comment_path do %>
-        <%=label_tag :add_comment%>
+
+    <%= form_tag fundraiser_comments_path(fundraiser) do %>
         <%=text_field_tag :comment, '', size: 100%>
         <%=submit_tag "Post Comment"%>
     <% end %>
-</div>
