@@ -1,6 +1,10 @@
 class ClassroomsController < ApplicationController
     layout "main"
 
+    def index 
+        @classrooms = Classroom.school_classrooms(current_user.school)
+    end 
+
     def new 
         @classroom = Classroom.new
     end 
