@@ -1,11 +1,13 @@
 class ReservationsController < ApplicationController
     layout "main"
 
+    before_action :belongs_to_household?, only: [:show, :edit, :update, :destroy]
+
     def new 
-      
         @reservation = Reservation.new
         @fundraiser = Fundraiser.find(params[:fundraiser_id])
         @household = current_user.household
+        
     end 
 
     def create

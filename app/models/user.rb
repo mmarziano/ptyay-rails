@@ -35,6 +35,10 @@ class User < ApplicationRecord
       self.admin == true
     end 
 
+    def valid_user?(object)
+      logged_in? && object.user_id == session[:user_id]
+    end
+
     def my_reservation(fundraiser)
       self.household.reservations.detect do |r|
         r.fundraiser_id == fundraiser.id

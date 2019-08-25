@@ -4,7 +4,7 @@ class Reservation < ApplicationRecord
     serialize :attendees, Array
 
     validates_uniqueness_of :household_id, scope: :fundraiser_id, message: "Your household has already RSVP'd.  Please edit your reservation to continue"
-
+    validates :number_attending, numericality: {only_integer: true, greater_than: 0}
 
     belongs_to :fundraiser
     belongs_to :household

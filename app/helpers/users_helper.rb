@@ -5,8 +5,8 @@ module UsersHelper
     end 
 
     def valid_user?(object)
-        logged_in? && object.id == session[:user_id]
-      end
+        logged_in? && object.user_id == session[:user_id]
+    end
 
     def is_admin?
         if current_user.admin != true 

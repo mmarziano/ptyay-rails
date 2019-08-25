@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
     include FundraisersHelper
     include CommentsHelper
     include ClassroomsHelper
+    include ReservationsHelper
     
     def index 
        
