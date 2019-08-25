@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
 
     before_action :my_comment?, only: [:edit, :show, :update, :destroy]
     
+
     
     def new
         @comment = Comment.new
@@ -35,8 +36,10 @@ class CommentsController < ApplicationController
     end 
 
     def destroy
+        @fundraiser = Fundraiser.find(params[:fundraiser_id])
         @comment = Comment.find(params[:id])
         @comment.destroy
+            redirect_to fundraiser_path(@fundraiser)
     end 
 
   
