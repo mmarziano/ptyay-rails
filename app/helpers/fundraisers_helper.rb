@@ -18,4 +18,5 @@ module FundraisersHelper
         "Completed!"
       end
     end 
+
 end
