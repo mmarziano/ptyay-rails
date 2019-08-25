@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
     layout "main"
-   
+    
+
     ADMIN_PIN = "1234"
 
     def index

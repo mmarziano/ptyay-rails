@@ -1,4 +1,4 @@
- <% if current_user.admin? %>
+
     <div class="clear"></div>
 
     <h1 style="text-align:center">Fundraisers/Events</h1>
@@ -10,9 +10,7 @@
     <%= link_to 'Download as .xlsx', fundraisers_path(format: :xlsx), class: "btn btn-success", style: "float:right" %>
         <%= render partial: 'list'%>
     </div>
-<% else %>
-    <div class="clear"></div>
 
-    <h1 style="text-align:center">Restricted</h1>
 
-<% end %>
+  
+

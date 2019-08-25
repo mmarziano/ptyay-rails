@@ -1,7 +1,7 @@
 class FundraisersController < ApplicationController
     layout "main"
 
-    before_action :require_admin, only: [:new, :create, :edit, :update, :destroy]
+    before_action :is_admin?, only:  [:index, :new, :create, :edit, :update, :destroy]
 
     def index
         @fundraisers = Fundraiser.all
@@ -11,9 +11,6 @@ class FundraisersController < ApplicationController
         end
     end 
 
-    def new
-        @fundraiser = Fundraiser.new
-    end
 
     def create
         @fundraiser = Fundraiser.create(fundraiser_params)
