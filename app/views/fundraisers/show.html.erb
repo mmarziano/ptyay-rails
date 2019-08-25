@@ -34,9 +34,9 @@
             
             <% @fundraiser.comments.reverse.each do |c| %>
                 <% if c.user == current_user %>
-                    <p><%=link_to c.text, edit_fundraiser_comment_path(@fundraiser, c) %> - <%= c.show_comment_info%></p>
+                    <p><%=link_to c.text, edit_fundraiser_comment_path(@fundraiser, c) %> - <%= c.show_comment_info%> <%= link_to raw("&#10008;"), comment_path(c), method: :delete %></td></p>
                 <% else %>
-                    <p><%=c.text %> - <%= c.show_comment_info%></p>
+                    <p><%=c.text %> - <%= c.show_comment_info%> <%= link_to raw("&#10008;"), comment_path(c), method: :delete %></td></p>
                 <% end %>
             <% end %>
             
