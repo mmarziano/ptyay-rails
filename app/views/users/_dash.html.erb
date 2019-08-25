@@ -72,21 +72,34 @@
                             <th></th>
                         </tr>
                             <% @user.school.fundraisers.each do |fundraiser| %>
-                            <tr>
-                            <% if !current_user.rsvpd(fundraiser).empty? %>
-                                <td><%= link_to "Already RSVP'd! View Details", reservation_path(current_user.my_reservation(fundraiser)), class: "btn btn-link", style: "color: green" %></td>
+                            <% if fundraiser.status == "Completed" %>
+                                <tr class="table-secondary">
+                                    <td>Completed!</td>
+                                    <td><%= link_to fundraiser.title, fundraiser_path(fundraiser) %></td>
+                                    <td><%= fundraiser.date.strftime("%m/%d/%Y") %></td>
+                                    <td>$<%= fundraiser.price %></td>
+                                    <td><%= fundraiser.location %></td>
+                                    <% if @user.admin? %>
+                                        <td><%= link_to raw("&#9998;"), edit_fundraiser_path(fundraiser), style: "color: white; margin-right: 5px" %><%= link_to raw("&#10008;"), fundraiser_path(fundraiser), method: :delete %></td>
+                                    <% end %>
+                                </tr>
                             <% else %>
-                                <td><%= link_to "View Details/RSVP!", new_fundraiser_reservation_path(fundraiser), class: "btn btn-link" %></td>
-                            <% end %>
-                                <td><%= link_to fundraiser.title, fundraiser_path(fundraiser) %></td>
-                                <td><%= fundraiser.date.strftime("%m/%d/%Y") %></td>
-                                <td>$<%= fundraiser.price %></td>
-                                <td><%= fundraiser.location %></td>
-                                <% if @user.admin? %>
-                                     <td><%= link_to raw("&#9998;"), edit_fundraiser_path(fundraiser), style: "color: white; margin-right: 5px" %><%= link_to raw("&#10008;"), fundraiser_path(fundraiser), method: :delete %></td>
+                            <tr>
+                                <% if !current_user.rsvpd(fundraiser).empty? %>
+                                    <td><%= link_to "Already RSVP'd! View Details", reservation_path(current_user.my_reservation(fundraiser)), class: "btn btn-link", style: "color: green" %></td>
+                                <% else %>
+                                    <td><%= link_to "View Details/RSVP!", new_fundraiser_reservation_path(fundraiser), class: "btn btn-link" %></td>
                                 <% end %>
-                            </tr>
+                                    <td><%= link_to fundraiser.title, fundraiser_path(fundraiser) %></td>
+                                    <td><%= fundraiser.date.strftime("%m/%d/%Y") %></td>
+                                    <td>$<%= fundraiser.price %></td>
+                                    <td><%= fundraiser.location %></td>
+                                    <% if @user.admin? %>
+                                        <td><%= link_to raw("&#9998;"), edit_fundraiser_path(fundraiser), style: "color: white; margin-right: 5px" %><%= link_to raw("&#10008;"), fundraiser_path(fundraiser), method: :delete %></td>
+                                    <% end %>
+                                </tr>
                             <% end %>
+                        <% end %>
                     </table>
                     <% if @user.admin? %>
                          <%= link_to 'Add Fundraiser', new_fundraiser_path, :class => "btn btn-primary", :style => "float: left" %>

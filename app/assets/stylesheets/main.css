@@ -106,6 +106,16 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
     max-width: 100px;
 }
 
+.card-body .link {
+    position: relative;
+    color: orange; 
+    font-size: 16px;
+}
+
+.table-secondary {
+    background-color: orange;
+}
+
 /* TAGLINE */
 
 #tagline {
