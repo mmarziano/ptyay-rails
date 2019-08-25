@@ -33,7 +33,11 @@
             <div class="line"></div>
             
             <% @fundraiser.comments.reverse.each do |c| %>
-                <p><%=c.show_comment%></p>
+                <% if c.user == current_user %>
+                    <p><%=link_to c.text, edit_fundraiser_comment_path(@fundraiser, c) %> - <%= c.show_comment_info%></p>
+                <% else %>
+                    <p><%=c.text %> - <%= c.show_comment_info%></p>
+                <% end %>
             <% end %>
             
             <div class="line"></div>

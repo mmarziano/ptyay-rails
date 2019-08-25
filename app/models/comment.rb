@@ -6,8 +6,8 @@ class Comment < ApplicationRecord
         self.created_at.strftime("%m/%d/%y at %I:%M %p")
     end 
 
-    def show_comment
-            self.user.first_name + ": " + self.text + " - " + self.post_time 
+    def show_comment_info
+        self.user.first_name + " - " + self.post_time
     end    
     
 

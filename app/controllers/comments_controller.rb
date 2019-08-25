@@ -1,6 +1,9 @@
 class CommentsController < ApplicationController
     layout "main"
 
+    before_action :my_comment?, only: [:edit, :show, :update, :destroy]
+    
+    
     def new
         @comment = Comment.new
     end 
