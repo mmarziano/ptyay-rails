@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   
   resources :users
   resources :fundraisers do
-    resources :reservations, only: :new
+    resources :reservations, only: [:new, :edit]
     resources :comments, only: [:new, :create, :edit, :update]
   end 
 

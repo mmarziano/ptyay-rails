@@ -18,16 +18,16 @@
         <th><h3>Attendees</h3</th>
         <th><h3>Grade</h3></th>
     </tr>
-        <% @household.reservations.each do |r| %>
-            <% r.attendees.each do |a| %>
-                <tr>
+        <% Reservation.household_attendees_list(current_user, @fundraiser).each do |a| %>
+            <tr>
                     <td><%= a.full_name %></td>
                     <td><%= a.grade %></td>
-                </tr>
-            <% end %>
-        <% end %>
+            </tr>
+        <% end %>  
     </table>
-    <%= link_to "Cancel Reservation", reservation_path(@reservation), method: :delete, class: "btn btn-danger", style: "float: right"%>
+    <%= link_to "Cancel Reservation", reservation_path(@reservation), method: :delete, class: "btn btn-danger", style: "float: right; margin-left: 10px;"%>
+    <%= link_to "Edit Reservation", edit_fundraiser_reservation_path(@fundraiser, @reservation), class: "btn btn-primary", style: "float: right"%>
+   
 
 </div>
 

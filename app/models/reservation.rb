@@ -39,5 +39,17 @@ class Reservation < ApplicationRecord
         @attendees
     end 
 
+    def self.household_attendees_list(user, fundraiser)
+        @attendees = []
+        user.household.reservations.each do |r|
+           if r.fundraiser_id == fundraiser.id
+                r.attendees.each do |s|
+                    @attendees << s 
+                end  
+            end
+        end 
+        @attendees
+    end 
+
    
 end
