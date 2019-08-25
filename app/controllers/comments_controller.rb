@@ -2,8 +2,11 @@ class CommentsController < ApplicationController
     layout "main"
 
     before_action :my_comment?, only: [:edit, :show, :update, :destroy]
-    
+    before_action :is_admin?, only: :index
 
+    def index 
+        @comments = Comment.select {|c| c.fundraiser.school == current_user.school}
+    end 
     
     def new
         @comment = Comment.new

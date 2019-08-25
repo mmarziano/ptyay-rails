@@ -10,7 +10,7 @@ module UsersHelper
 
     def is_admin?
         if current_user.admin != true 
-            flash[:alert] = "Must be an admin to access."
+            flash[:alert] = "Must have admin rights to access."
             redirect_to user_path(current_user) 
         end 
     end 

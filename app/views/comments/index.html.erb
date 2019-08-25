@@ -1,0 +1,22 @@
+<div class="clear"></div>
+
+<div class="frame-full">
+        <table class="table table-striped">
+            <tr>
+                <th><h3>Comment</h3></th>
+                <th><h3>User</h3></th>
+                <th><h3>Fundraiser</h3></th>
+                <th><h3>Time Posted</h3></th>
+                <th></th>
+            </tr>
+            <% @comments.each do |c| %>
+            <tr>
+                <td><%= c.text %></td>
+                <td><%= c.user.full_name %></td>
+                <td><%= c.fundraiser.title %></td>
+                <td><%= c.post_time %></td>
+                <td><%= link_to "Delete", fundraiser_comment_path(c.fundraiser, c), method: :delete %></td>
+            </tr>
+            <% end %>
+        </table>
+</div>
