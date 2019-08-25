@@ -21,7 +21,7 @@
     <h3>Select School</h3>
 
     <%= f.label :school_name %>
-    <%= f.collection_select :school_id, School.all, :id, :name, {}, {class: "form-control", :required => true} %></br>
+    <%= f.collection_select :school_id, School.all, :id, :name, {}, {class: "form-control", :disabled => "disabled"} %></br>
 
     <%= f.submit class: "btn btn-outline-light"  %>
 
