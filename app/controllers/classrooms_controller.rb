@@ -1,6 +1,8 @@
 class ClassroomsController < ApplicationController
     layout "main"
 
+    before_action :is_admin?, only:  [:index, :new, :create, :edit, :update, :destroy]
+
     def index 
         @classrooms = Classroom.school_classrooms(current_user.school)
     end 

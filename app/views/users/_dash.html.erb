@@ -73,7 +73,7 @@
                         </tr>
                             <% @user.school.fundraisers.each do |fundraiser| %>
                             <% if fundraiser.status == "Completed" %>
-                                <tr class="table-secondary">
+                                <tr class="table-completed">
                                     <td>Completed!</td>
                                     <td><%= link_to fundraiser.title, fundraiser_path(fundraiser) %></td>
                                     <td><%= fundraiser.date.strftime("%m/%d/%Y") %></td>

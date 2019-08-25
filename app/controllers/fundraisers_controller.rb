@@ -1,16 +1,20 @@
 class FundraisersController < ApplicationController
     layout "main"
 
+    before_action :school_fundraiser?, only: [:show, :edit, :update, :destroy]
     before_action :is_admin?, only:  [:index, :new, :create, :edit, :update, :destroy]
 
     def index
-        @fundraisers = Fundraiser.all
+        @fundraisers = Fundraiser.select {|f| f.school == current_user.school}
         respond_to do |format|
             format.html
             format.xlsx
         end
     end 
 
+    def new 
+        @fundraiser = Fundraiser.new
+    end 
 
     def create
         @fundraiser = Fundraiser.create(fundraiser_params)

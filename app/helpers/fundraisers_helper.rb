@@ -19,4 +19,11 @@ module FundraisersHelper
       end
     end 
 
+    def school_fundraiser?
+      @fundraiser = Fundraiser.find(params[:id])
+      if @fundraiser.school_id != current_user.school_id
+          flash[:alert] = "Must belong to school to continue."
+          redirect_to user_path(current_user)
+      end 
+  end  
 end
