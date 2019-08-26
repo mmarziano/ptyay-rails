@@ -76,9 +76,9 @@
                                 <tr class="table-completed">
                                     <td>Completed!</td>
                                     <td><%= link_to fundraiser.title, fundraiser_path(fundraiser) %></td>
-                                    <td><%= fundraiser.date.strftime("%m/%d/%Y") %></td>
-                                    <td>$<%= fundraiser.price %></td>
-                                    <td><%= fundraiser.location %></td>
+                                    <td><%= fundraiser.format_date %></td>
+                                    <td>$<%= fundraiser.fundraiser_info("price") %></td>
+                                    <td><%= fundraiser.fundraiser_info("location") %></td>
                                     <% if @user.admin? %>
                                         <td><%= link_to raw("&#9998;"), edit_fundraiser_path(fundraiser), style: "color: white; margin-right: 5px" %><%= link_to raw("&#10008;"), fundraiser_path(fundraiser), method: :delete %></td>
                                     <% end %>
@@ -91,9 +91,9 @@
                                     <td><%= link_to "View Details/RSVP!", new_fundraiser_reservation_path(fundraiser), class: "btn btn-link" %></td>
                                 <% end %>
                                     <td><%= link_to fundraiser.title, fundraiser_path(fundraiser) %></td>
-                                    <td><%= fundraiser.date.strftime("%m/%d/%Y") %></td>
-                                    <td>$<%= fundraiser.price %></td>
-                                    <td><%= fundraiser.location %></td>
+                                    <td><%= fundraiser.format_date %></td>
+                                    <td>$<%= fundraiser.fundraiser_info("price") %></td>
+                                    <td><%= fundraiser.fundraiser_info("location") %></td>
                                     <% if @user.admin? %>
                                         <td><%= link_to raw("&#9998;"), edit_fundraiser_path(fundraiser), style: "color: white; margin-right: 5px" %><%= link_to raw("&#10008;"), fundraiser_path(fundraiser), method: :delete %></td>
                                     <% end %>

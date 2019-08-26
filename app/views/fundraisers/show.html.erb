@@ -1,12 +1,13 @@
 
 <div class="clear"></div>
-    <div class="frame-full">
- 
+
+<div class="frame-full">
     <div class="line"></div>
     
         <h2 style="color: rgb(0, 141, 184)"><%= @fundraiser.title %></h2><h2 style="float:right; color: orange"><%= @fundraiser.status %></h2>
         <p><%= @fundraiser.description %></p>
-                <table class="table table-striped text-center">
+                
+        <table class="table table-striped text-center">
                     <tr>
                         <th><h3>Location</h3></th>
                         <th><h3>Start Time</h3></th>
@@ -14,16 +15,16 @@
                         <th><h3>Price</h3></th>
                     </tr>
                     <tr>
-                        <td><%= @fundraiser.location %></td>
-                        <td><%= @fundraiser.time.strftime("%I:%M %p") %></td>
-                        <td><%= @fundraiser.duration %> minutes</td>
-                        <td>$<%= @fundraiser.price %></td>
+                        <td><%= @fundraiser.fundraiser_info("location") %></td>
+                        <td><%= @fundraiser.time.strftime("%I:%M %p") unless @fundraiser.time.nil?%></td>
+                        <td><%= @fundraiser.fundraiser_info("duration") %> minutes</td>
+                        <td>$<%= @fundraiser.fundraiser_info("price") %></td>
                     </tr>
-                </table>
+        </table>
             <% if !current_user.rsvpd(@fundraiser).empty? && @fundraiser.status != "Completed"%>
                 <span style="color: green; float: left">Already RSVP'd!</span>
-                <%= link_to "Cancel Reservation", reservation_path(current_user.rsvpd(@fundraiser)), method: :delete, class: "btn btn-danger", style: "float: right; margin-left: 10px;"%>
-                <%= link_to "Edit Reservation", edit_fundraiser_reservation_path(@fundraiser, current_user.rsvpd(@fundraiser)), class: "btn btn-primary", style: "float: right"%>
+                <%= link_to "Cancel Reservation", reservation_path(current_user.rsvpd(@fundraiser)), method: :delete, class: "btn btn-danger push-right", style: "margin-left: 10px;"%>
+                <%= link_to "Edit Reservation", edit_fundraiser_reservation_path(@fundraiser, current_user.rsvpd(@fundraiser)), class: "btn btn-primary push-right"%>
             <% else %>
                 <%= link_to 'RSVP!', new_fundraiser_reservation_path(@fundraiser), class: "btn btn-primary", style: "float: right" unless @fundraiser.status == "Completed"%>
             <% end %>

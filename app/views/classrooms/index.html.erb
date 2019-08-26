@@ -1,10 +1,8 @@
 <div class="clear"></div>
     <h1 style="text-align: center">Classroom List</h1>
-    
-    <div class="clear"></div>
+        <div class="clear"></div>
 
     <div class="frame-full">
-     
         <% @classrooms.each do |c| %>
             <h1 style="color: rgb(0, 141, 184)"><%= c.name %></h1>
             <h3 style="color:orange">Total Points: <%=c.participation_points_by_classroom%></h3>
@@ -20,6 +18,5 @@
                 </tr>
                 <% end %>
             </table>
-
         <% end %>
     </div>

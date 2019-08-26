@@ -26,4 +26,7 @@ module FundraisersHelper
           redirect_to user_path(current_user)
       end 
   end  
+
+  
+
 end

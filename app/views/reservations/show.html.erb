@@ -25,8 +25,8 @@
             </tr>
         <% end %>  
     </table>
-    <%= link_to "Cancel Reservation", reservation_path(@reservation), method: :delete, class: "btn btn-danger", style: "float: right; margin-left: 10px;"%>
-    <%= link_to "Edit Reservation", edit_fundraiser_reservation_path(@fundraiser, @reservation), class: "btn btn-primary", style: "float: right"%>
+    <%= link_to "Cancel Reservation", reservation_path(@reservation), method: :delete, class: "btn btn-danger push-right", style: "margin-left: 10px;"%>
+    <%= link_to "Edit Reservation", edit_fundraiser_reservation_path(@fundraiser, @reservation), class: "btn btn-primary push-right"%>
    
 
 </div>
