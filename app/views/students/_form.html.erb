@@ -1,5 +1,5 @@
 <%= form_for @student, :method => 'post' do |f| %>
-        <%= f.hidden_field :household_id, :value => @household.id %>
+        <%= f.hidden_field :household_id, :value => current_user.household.id %>
         <%= f.label :first_name %>
         <%= f.text_field :first_name, class: "form-control", required: true %></br>
         <%= f.label :last_name %>

@@ -1,6 +1,8 @@
 class StudentsController < ApplicationController
     layout "main"
 
+    before_action :my_student?, only: [:edit, :update, :show, :destroy]
+    
     def new
         @student = Student.new
         @household = current_user.household

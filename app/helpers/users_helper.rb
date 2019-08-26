@@ -14,5 +14,13 @@ module UsersHelper
             redirect_to user_path(current_user) 
         end 
     end 
+
+    def my_student?
+        @student = Student.find(params[:id])
+        if !current_user.household.students.include?(@student)
+          flash[:alert] = "Cannot edit this student."
+          redirect_to user_path(current_user)
+        end
+    end 
   
 end
