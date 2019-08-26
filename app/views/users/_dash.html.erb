@@ -36,14 +36,12 @@
                             <th><h3>Student Name</h3></th>
                             <th><h3>Grade</h3></th>
                             <th><h3>Points</h3></th>
-                            <th><h3>Action</h3></th>
                         </tr>
                             <% @user.household.students.each do |student| %>
                             <tr>
                                 <td><%= student.full_name %></td>
                                 <td><%= student.grade %></td>
                                 <td><%= student.participation_points_by_student %></td>
-                                <td><%= link_to "Edit", edit_student_path(student), :class => "btn btn-primary"%></td>
                             </tr>
                             <% end %>
                     </table>
