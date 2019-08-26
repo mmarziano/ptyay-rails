@@ -16,6 +16,8 @@ class SessionsController < ApplicationController
                 redirect_to user_path(@user)
             elsif @user && @user.authenticate(params[:password])
                 redirect_to signup_path(@user)
+            elsif @user 
+                render "sessions/login_retry"
             else 
                 redirect_to new_user_path
             end
