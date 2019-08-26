@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
     layout "main"
 
-    before_action :my_comment?, only: [:edit, :show, :update, :destroy]
+    before_action :my_comment?, only: [:edit, :show, :update,]
     before_action :is_admin?, only: :index
 
     def index 
@@ -41,8 +41,13 @@ class CommentsController < ApplicationController
     def destroy
         @fundraiser = Fundraiser.find(params[:fundraiser_id])
         @comment = Comment.find(params[:id])
-        @comment.destroy
+        if @comment.user == current_user || current_user.admin == true && current_user.school == @fundraiser.school
+            @comment.destroy
             redirect_to fundraiser_path(@fundraiser)
+        else 
+            flash[:alert] = "Unable to delete."
+            redirect_to user_path(current_user)
+        end
     end 
 
   
