@@ -45,7 +45,7 @@ class StudentsController < ApplicationController
         @student = Student.find(params[:id])
         @student.household.reservations.each do |r| 
             r.attendees.each do |student|
-                if student == @student
+                if student == @student && r.fundraiser.status == "Pending"
                     r.attendees -= [student]
                 end 
             if r.attendees.empty?
