@@ -3,6 +3,7 @@ class StudentsController < ApplicationController
 
     def new
         @student = Student.new
+        @household = current_user.household
     end 
 
     def create
@@ -38,6 +39,24 @@ class StudentsController < ApplicationController
             @student.errors.full_messages.inspect
             render :household_path
         end 
+    end 
+
+    def destroy
+        @student = Student.find(params[:id])
+        @student.household.reservations.each do |r| 
+            r.attendees.each do |student|
+                if student == @student
+                    r.attendees -= [student]
+                end 
+            if r.attendees.empty?
+                r.delete
+            else 
+              r.save!
+            end
+          end  
+        end
+        @student.delete
+        redirect_to user_path(current_user)
     end 
 
     private 

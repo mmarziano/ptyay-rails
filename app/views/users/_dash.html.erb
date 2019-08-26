@@ -28,6 +28,8 @@
             <h1><%=@user.first_name%>'s Household</h1>
         </div>
         <div class="frame text-center">
+            <%= link_to "View Household Info", household_path(current_user.household), :class => "btn btn-success btn-sm", style: "float: right" %></br>
+            </br>
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <tr>

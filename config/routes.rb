@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   post '/profile' => "users#complete_update"
   patch '/complete_profile' => "users#complete_profile"
   post '/fundraisers/:fundraiser_id/comments/new' => "comments#create"
-  
+  post '/households/:household_id/students/new' => "students#create"
   
   resources :users
   resources :fundraisers do
@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   resources :reservations
   resources :schools
   resources :households do 
-    resources :students, only: :new
+    resources :students, only: [:new, :create]
   end 
   resources :students
   resources :classrooms, only: [:index, :new, :create]

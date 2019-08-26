@@ -1,6 +1,8 @@
 class HouseholdsController < ApplicationController
     layout "main"
     
+    before_action :my_household?, only: [:edit, :show, :update, :destroy]
+
     def new
         @household = Household.new
         

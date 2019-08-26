@@ -20,6 +20,15 @@ class Student < ApplicationRecord
         points
     end 
 
+    def delete_student_reservations 
+      self.household.reservations.each do |r|
+        r.attendees.each do |s|
+          if self.id == s.id
+            s.delete 
+          end 
+        end 
+      end 
+    end 
     
 end
 
