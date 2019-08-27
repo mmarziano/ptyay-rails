@@ -22,10 +22,10 @@
                 <th><h3>Price</h3></th>
             </tr>
             <tr>
-                <td><%= @fundraiser.location %></td>
-                <td><%= @fundraiser.time.strftime("%I:%M %p") %></td>
-                <td><%= @fundraiser.duration %> minutes</td>
-                <td>$<%= @fundraiser.price %></td>
+                <td><%= @fundraiser.fundraiser_info("location") %></td>
+                <td><%= @fundraiser.time.strftime("%I:%M %p") unless @fundraiser.time.nil? %></td>
+                <td><%= @fundraiser.fundraiser_info("duration") %> minutes</td>
+                <td>$<%= @fundraiser.fundraiser_info("price") %></td>
             </tr>    
         </table>
         <p style="color:orange"><%= @fundraiser.notice %></p>

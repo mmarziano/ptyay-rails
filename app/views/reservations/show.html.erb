@@ -7,11 +7,11 @@
 <div class="frame">
     <h3 style="color: rgb(0, 141, 184)"><%=@fundraiser.title%></h3>
     <div class="line"></div>
-    <h5>Location: <%= @fundraiser.location %></h5>
-    <h5>Event Date: <%= @fundraiser.date %></h5>
-    <h5>Event Time: <%= @fundraiser.time.strftime("%I:%M %p") %></h5>
-    <h5>Event Duration: <%= @fundraiser.duration %> minutes</h5>
-    <h5>Event Price: $<%= @fundraiser.price %></h5>
+    <h5>Location: <%= @fundraiser.fundraiser_info("location") %></h5>
+    <h5>Event Date: <%= @fundraiser.format_date %></h5>
+    <h5>Event Time: <%= @fundraiser.time.strftime("%I:%M %p") unless @fundraiser.time.nil? %></h5>
+    <h5>Event Duration: <%= @fundraiser.fundraiser_info("duration") %> minutes</h5>
+    <h5>Event Price: $<%= @fundraiser.fundraiser_info("price") %></h5>
 
     <table class="table table-striped">
     <tr>
