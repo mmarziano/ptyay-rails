@@ -4,6 +4,9 @@ class Fundraiser < ApplicationRecord
     has_many :comments
     has_many :reservations
 
+    scope :exceeded_expectations?, -> { where('amt_raised > goal')}
+    scope :belongs_to_school?, -> (user) { where(school_id: user.school_id)}
+
     def completed?
         self.status == "Completed"
     end 
@@ -25,10 +28,10 @@ class Fundraiser < ApplicationRecord
     end 
 
     def percent_of_goal
-        x = self.amt_raised - self.goal 
-        y = x / self.goal
-        z = y * 100
-        z
+            x = self.amt_raised - self.goal 
+            y = x / self.goal
+            z = y * 100
+            z
     end 
     
 end

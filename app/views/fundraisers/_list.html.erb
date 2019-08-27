@@ -19,3 +19,7 @@
             <% end %>  
         </table>
 <% end %>
+
+<%Fundraiser.exceeded_expectations?.belongs_to_school?(current_user).each do |f|%>
+    <h3><%=f.title%></h3>
+<% end %>

@@ -4,6 +4,10 @@ class Student < ApplicationRecord
     belongs_to :classroom, optional: true
     has_many :reservations
 
+    #scope :bronze, -> { where(participation_points_by_student > 0)}
+    #scope :silver, -> { where(participation_points_by_student > 10) }
+    #scope :gold, -> { where(participation_points_by_student > 15) }
+
 
     def full_name 
         self.first_name.capitalize + " " + self.last_name.capitalize
