@@ -71,6 +71,6 @@ class FundraisersController < ApplicationController
     
     private 
         def fundraiser_params
-            params.require(:fundraiser).permit(:title, :goal, :date, :description, :price, :time, :duration, :location, :notice, :school_year, :admin_notes, :status)
+            params.require(:fundraiser).permit(:title, :goal, :date, :description, :price, :amt_raised, :time, :duration, :location, :notice, :school_year, :admin_notes, :status)
         end 
 end

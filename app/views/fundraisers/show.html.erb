@@ -21,7 +21,7 @@
                         <td>$<%= @fundraiser.fundraiser_info("price") %></td>
                     </tr>
         </table>
-            <% if !current_user.rsvpd(@fundraiser).empty? && @fundraiser.status != "Completed"%>
+            <% if !current_user.rsvpd(@fundraiser).empty? && !@fundraiser.completed?%>
                 <span style="color: green; float: left">Already RSVP'd!</span>
                 <%= link_to "Cancel Reservation", reservation_path(current_user.rsvpd(@fundraiser)), method: :delete, class: "btn btn-danger push-right", style: "margin-left: 10px;"%>
                 <%= link_to "Edit Reservation", edit_fundraiser_reservation_path(@fundraiser, current_user.rsvpd(@fundraiser)), class: "btn btn-primary push-right"%>
@@ -45,7 +45,15 @@
             <div class="line"></div>
             
             <%= render partial: '/comments/comment_field', locals: {fundraiser: @fundraiser} %>
-        
-    
 
-</div>
+    </div>
+   
+         <% if current_user.admin? && @fundraiser.completed?%>
+            <div class="frame-full">        
+                <h3 class="archived"> Admin Notes: <span><%=@fundraiser.admin_notes %></span></h3>
+                <h3 class="archived"> Amount Raised: <span>$<%=@fundraiser.amt_raised %></span></h3>
+                <h3 class="archived"> Goal: <span>$<%=@fundraiser.goal %> (<%= @fundraiser.percent_of_goal %>% of goal reached)</span></h3>
+            </div>
+         <% end %> 
+
+ 

@@ -33,7 +33,10 @@
     <%= f.text_area :notice, class: "form-control" %></br>
     <%= f.check_box :status %>
     <%= f.label :completed?, class: "checkboxes"%></br>
-    
+    <%= f.label :amt_raised %>
+    <%= f.text_field :amt_raised, class: "form-control", required: true %></br>
+    <%= f.label :admin_notes %>
+    <%= f.text_area :admin_notes, class: "form-control" %></br>
     <br>
     
 <%= f.submit class: "btn btn-outline-light" %>

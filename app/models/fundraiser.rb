@@ -4,6 +4,10 @@ class Fundraiser < ApplicationRecord
     has_many :comments
     has_many :reservations
 
+    def completed?
+        self.status == "Completed"
+    end 
+
     def fundraiser_info(attribute) 
         if self.send(attribute).nil?
             "None specified"
@@ -20,5 +24,11 @@ class Fundraiser < ApplicationRecord
         end 
     end 
 
+    def percent_of_goal
+        x = self.amt_raised - self.goal 
+        y = x / self.goal
+        z = y * 100
+        z
+    end 
     
 end
