@@ -23,6 +23,7 @@ class CommentsController < ApplicationController
 
     def edit
         @comment = Comment.find(params[:id])
+        @fundraiser = @comment.fundraiser
     end 
 
     def update

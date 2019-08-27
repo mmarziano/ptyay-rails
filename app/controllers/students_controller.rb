@@ -17,7 +17,7 @@ class StudentsController < ApplicationController
             @student = Student.new(student_params)
             @student.household = Household.find(current_user.household_id)
             @student.school = current_user.school
-            @classroom = Classroom.find_by(name: params[:student][:grade])
+            @classroom = Classroom.school_classrooms(@student.school).detect {|c| c.name == params[:student][:grade]}
             @student.classroom = @classroom
                 if @student.save 
                     render "users/show"

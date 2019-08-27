@@ -1,4 +1,4 @@
-<%= form_tag [fundraiser, comment], :method => :patch do %>
+<%= form_tag fundraiser_comment_path(fundraiser, comment), :method => :patch do %>
     <%=text_field_tag :comment, '', :value => comment.text, size: 100 %></br>
     </br>
     <%=submit_tag "Edit Comment"%>

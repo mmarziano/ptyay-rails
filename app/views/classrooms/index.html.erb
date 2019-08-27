@@ -12,9 +12,10 @@
                     <th><h3>Participation Points</h3></th>
                 </tr>
                 <tr>
-                    <% c.students.each do |s| %>
-                    <td style="color: orange"><%= s.full_name %></td>
-                    <td style="color: orange"><%= s.participation_points_by_student %></td>
+                    <% c.students.each do |student| %>
+                        
+                    <td style="color: orange"><%= student.full_name %></td>
+                    <td style="color: orange"><%= student.participation_points_by_student %></td>
                 </tr>
                 <% end %>
             </table>
