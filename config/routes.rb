@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   patch '/complete_profile' => "users#complete_profile"
   post '/fundraisers/:fundraiser_id/comments/new' => "comments#create"
   post '/households/:household_id/students/new' => "students#create"
+  get '/fundraisers/exceeded_expectations' => "fundraisers#ee"
   
   resources :users
   resources :fundraisers do

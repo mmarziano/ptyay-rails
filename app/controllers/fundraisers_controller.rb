@@ -2,7 +2,7 @@ class FundraisersController < ApplicationController
     layout "main"
 
     before_action :school_fundraiser?, only: [:show, :edit, :update, :destroy]
-    before_action :is_admin?, only:  [:index, :new, :create, :edit, :update, :destroy]
+    before_action :is_admin?, only:  [:index, :new, :create, :edit, :update, :destroy, :ee]
 
     def index
         @fundraisers = Fundraiser.select {|f| f.school == current_user.school}
@@ -10,6 +10,10 @@ class FundraisersController < ApplicationController
             format.html
             format.xlsx
         end
+    end 
+
+    def ee 
+        @fundraisers = Fundraiser.exceeded_expectations?.belongs_to_school?(current_user)
     end 
 
     def new 
