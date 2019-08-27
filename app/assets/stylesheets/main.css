@@ -92,6 +92,14 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
 .push-left {
     float: left;
 }
+
+.google-btn {
+    background-image: url(/assets/googlebtn.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100px;
+    height: auto;
+}
 /* COMMENTS STYLING */
 
 .col-form-label {
