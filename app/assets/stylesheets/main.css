@@ -97,9 +97,17 @@ h1, h2, h3, h4, h5, h6 {font-family: 'Fjalla One', 'Helvetica', sans-serif;}
     background-image: url(/assets/googlebtn.jpg);
     background-repeat: no-repeat;
     background-size: contain;
-    width: 100px;
+    width: 100%;
     height: auto;
+    padding: 25px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
 }
+
+
+
+
 /* COMMENTS STYLING */
 
 .col-form-label {
