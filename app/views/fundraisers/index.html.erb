@@ -7,7 +7,9 @@
 
     
     <div class="frame-full">
-    <%= link_to 'Download as .xlsx', fundraisers_path(format: :xlsx), class: "btn btn-success push-right" %>
+    <%= link_to 'Download as .xlsx', fundraisers_path(format: :xlsx), class: "btn btn-primary push-right", style: "margin-left: 10px;" %>
+    <%= link_to "Most Successful Campaigns", fundraisers_exceeded_expectations_path,  class: "btn btn-success push-right"%>
+    
         <%= render partial: 'list'%>
     </div>
 

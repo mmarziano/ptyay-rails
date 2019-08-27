@@ -30,7 +30,7 @@ class Fundraiser < ApplicationRecord
     def percent_of_goal
             x = self.amt_raised - self.goal 
             y = x / self.goal
-            z = y * 100
+            z = y * 100 + 100
             z
     end 
     

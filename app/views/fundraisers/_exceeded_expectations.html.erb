@@ -1,4 +1,5 @@
 
     <%@fundraisers.each do |f|%>
-        <h3><%=f.title%></h3>
+        <h3><%=link_to f.title, fundraiser_path(f)%></h3>
+        <br>
     <% end %>

@@ -1,4 +1,4 @@
-<%= link_to "View Fundraisers That Exceeded Expectation", fundraisers_exceeded_expecations_path,  class: "btn btn-link push-right"%>
+
 
 <% @fundraisers.each do |f| %>
     <h2 style="color: rgb(0, 141, 184)"><%= link_to f.title, fundraiser_path(f) %></h2>
