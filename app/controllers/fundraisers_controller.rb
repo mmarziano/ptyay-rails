@@ -4,6 +4,7 @@ class FundraisersController < ApplicationController
     before_action :school_fundraiser?, only: [:show, :edit, :update, :destroy]
     before_action :is_admin?, only:  [:index, :new, :create, :edit, :update, :destroy, :ee]
 
+
     def index
         @fundraisers = Fundraiser.select {|f| f.school == current_user.school}
         respond_to do |format|
@@ -23,7 +24,6 @@ class FundraisersController < ApplicationController
     def create
         @fundraiser = Fundraiser.create(fundraiser_params)
         @fundraiser.school = current_user.school
-        @fundraiser.status = "Pending"
         if @fundraiser.save
             redirect_to user_path(current_user)
         else 
@@ -46,11 +46,6 @@ class FundraisersController < ApplicationController
         @fundraiser = Fundraiser.find(params[:id])
         if @fundraiser
             @fundraiser.update(fundraiser_params)
-                if params[:fundraiser][:status] == "1"
-                    @fundraiser.status = "Completed"
-                else 
-                    @fundraiser.status = "Pending"
-                end
             @fundraiser.save
             redirect_to user_path(current_user)
         else 
@@ -75,6 +70,6 @@ class FundraisersController < ApplicationController
     
     private 
         def fundraiser_params
-            params.require(:fundraiser).permit(:title, :goal, :date, :description, :price, :amt_raised, :time, :duration, :location, :notice, :school_year, :admin_notes, :status)
+            params.require(:fundraiser).permit(:title, :goal, :date, :description, :price, :amt_raised, :time, :duration, :location, :notice, :school_year, :admin_notes, :completed)
         end 
 end

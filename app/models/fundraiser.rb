@@ -8,7 +8,15 @@ class Fundraiser < ApplicationRecord
     scope :belongs_to_school?, -> (user) { where(school_id: user.school_id)}
 
     def completed?
-        self.status == "Completed"
+        self.completed == false
+    end 
+
+    def status 
+        if self.completed == false 
+            "Pending"
+        else self.completed == true 
+            "Completed"
+        end 
     end 
 
     def fundraiser_info(attribute) 

@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2019_08_22_123236) do
     t.string "artwork"
     t.text "description"
     t.decimal "amt_raised", precision: 16, scale: 2
-    t.string "status"
+    t.boolean "completed", default: false
     t.integer "goal"
     t.integer "price"
     t.time "time"
