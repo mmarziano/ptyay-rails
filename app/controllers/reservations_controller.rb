@@ -22,8 +22,12 @@ class ReservationsController < ApplicationController
             @reservation = Reservation.new(fundraiser_id: params[:reservation][:fundraiser_id], household_id: current_user.household_id, number_attending: params[:reservation][:number_attending])
             @household = current_user.household
             params[:reservation][:id].reject!{|id| id == ""}
-            @student = Student.find(params[:reservation][:id])
-            @reservation.attendees = @student
+            students = []
+            params[:reservation][:id].each do |p|
+                student = Student.find(p)
+                students << student 
+            end 
+            @reservation.attendees = students
             if @reservation.save
                 redirect_to reservation_path(@reservation)
             else 
