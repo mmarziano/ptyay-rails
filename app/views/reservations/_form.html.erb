@@ -55,7 +55,7 @@
             <%= f.label :number_attending %>
             <%= f.text_field :number_attending, class: "form-control", :required => true, disabled: true%></br>
             <%= f.label :students %></br>
-                <%= f.collection_check_boxes :id, @household.students, :id, :full_name, {checked: true}, :item_wrapper_class => 'form-check' do |b| %>
+                <%= f.collection_check_boxes :id, @household.students, :id, :full_name, :item_wrapper_class => 'form-check' do |b| %>
                 <div class="checkbox">
                     <%= b.check_box%>
                     <%= b.label class: "checkboxes" %>

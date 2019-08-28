@@ -7,18 +7,18 @@ class ReservationsController < ApplicationController
 
     def new 
         @fundraiser = Fundraiser.find(params[:fundraiser_id])
-        if @fundraiser.school_id == current_user.school_id
+        if !current_user.household.students.empty? && Fundraiser.belongs_to_school?(current_user)
             @reservation = Reservation.new    
             @household = current_user.household
         else 
-            flash[:alert] = "Must belong to correct school to continue."
+            flash[:alert] = "Must belong to school and have students added to your household before making a reservation."
             redirect_to user_path(current_user)
         end
     end 
 
     def create
         @fundraiser = Fundraiser.find(params[:reservation][:fundraiser_id])
-        if @fundraiser.school_id == current_user.school_id
+        if Fundraiser.belongs_to_school?(current_user)
             @reservation = Reservation.new(fundraiser_id: params[:reservation][:fundraiser_id], household_id: current_user.household_id, number_attending: params[:reservation][:number_attending])
             @household = current_user.household
             params[:reservation][:id].reject!{|id| id == ""}
