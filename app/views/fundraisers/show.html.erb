@@ -21,11 +21,13 @@
                         <td>$<%= @fundraiser.fundraiser_info("price") %></td>
                     </tr>
         </table>
-            <% if !current_user.rsvpd(@fundraiser).empty? && !@fundraiser.completed?%>
+            <% if @fundraiser.completed? %>
+                <h4>Cannot make any reservations at this time</h4>
+            <% elsif !current_user.rsvpd(@fundraiser).empty? && !@fundraiser.completed?%>
                 <span style="color: green; float: left">Already RSVP'd!</span>
                 <%= link_to "Cancel Reservation", reservation_path(current_user.rsvpd(@fundraiser)), method: :delete, class: "btn btn-danger push-right", style: "margin-left: 10px;"%>
                 <%= link_to "Edit Reservation", edit_fundraiser_reservation_path(@fundraiser, current_user.rsvpd(@fundraiser)), class: "btn btn-primary push-right"%>
-            <% else %>
+            <% else !@fundraiser.completed? %>
                 <%= link_to 'RSVP!', new_fundraiser_reservation_path(@fundraiser), class: "btn btn-primary", style: "float: right" unless @fundraiser.status == "Completed"%>
             <% end %>
 
