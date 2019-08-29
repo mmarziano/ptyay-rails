@@ -35,8 +35,10 @@ class Student < ApplicationRecord
             "/assets/bronze_badge.png"
           elsif self.participation_points_by_student > 5
             "/assets/silver_badge.png"
-          else self.participation_points_by_student > 10
+          elsif self.participation_points_by_student > 10
             "/assets/gold_badge.png"
+          else 
+            "/assets/starter_badge.png"
           end 
     end
     

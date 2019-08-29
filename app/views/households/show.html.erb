@@ -18,7 +18,7 @@
                     </tr>
                         <% @household.students.each do |student| %>
                         <tr>
-                            <td><%= image_tag(student.badge) %></td>
+                            <td class="badges"><%= image_tag(student.badge) %></td>
                             <td><%= student.full_name %></td>
                             <td><%= student.grade %></td>
                             <td><%= student.participation_points_by_student %></td>
