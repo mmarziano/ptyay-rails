@@ -4,8 +4,6 @@ class Student < ApplicationRecord
     belongs_to :classroom, optional: true
     has_many :reservations
 
-    scope :bronze, -> (student){ where(student.participation_points_by_student > 0)}
-    
     def full_name 
         self.first_name.capitalize + " " + self.last_name.capitalize
     end 
@@ -31,6 +29,16 @@ class Student < ApplicationRecord
         end 
       end 
     end 
+
+    def badge
+          if self.participation_points_by_student > 0
+            "/assets/bronze_badge.png"
+          elsif self.participation_points_by_student > 5
+            "/assets/silver_badge.png"
+          else self.participation_points_by_student > 10
+            "/assets/gold_badge.png"
+          end 
+    end
     
 end
 
