@@ -39,7 +39,7 @@ class Fundraiser < ApplicationRecord
             x = self.amt_raised - self.goal 
             y = x / self.goal
             z = y * 100 + 100
-            z
+            z.to_d.truncate(2)
     end 
     
 end
