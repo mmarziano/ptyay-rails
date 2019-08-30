@@ -17,12 +17,16 @@ class FundraisersController < ApplicationController
         @fundraisers = Fundraiser.exceeded_expectations?.belongs_to_school?(current_user)
     end 
 
+    def most_comments 
+        @fundraiser = Fundraiser.most_comments.first
+    end 
+
     def new 
         @fundraiser = Fundraiser.new
     end 
 
     def create
-        @fundraiser = Fundraiser.create(fundraiser_params)
+        @fundraiser = Fundraiser.new(fundraiser_params)
         @fundraiser.school = current_user.school
         if @fundraiser.save
             redirect_to user_path(current_user)

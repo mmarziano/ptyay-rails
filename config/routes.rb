@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   post '/fundraisers/:fundraiser_id/comments/new' => "comments#create"
   post '/households/:household_id/students/new' => "students#create"
   get '/fundraisers/exceeded_expectations' => "fundraisers#ee"
+  get '/fundraisers/most_comments' => "fundraisers#most_comments"
+
   
   resources :users
   resources :fundraisers do

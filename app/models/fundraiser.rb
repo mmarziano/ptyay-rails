@@ -6,7 +6,10 @@ class Fundraiser < ApplicationRecord
 
     scope :exceeded_expectations?, -> { where('amt_raised > goal')}
     scope :belongs_to_school?, -> (user) { where(school_id: user.school_id)}
+    scope :most_comments, -> {self.joins(:comments).group(:id).order("COUNT(comments.id) desc").limit(1)}
 
+    
+    
     def completed?
         self.completed == true
     end 
