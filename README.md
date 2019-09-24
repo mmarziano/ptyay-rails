@@ -9,3 +9,4 @@ Please note that "Signin with Google" will not work due to a missing Client_id o
 Bug Reporting: All comments and bug reports welcome (mmarziano1@gmail.com).
 
 # ptyay-rails
+# ptyay-javascript
